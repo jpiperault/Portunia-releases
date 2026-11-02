@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.51.2 · Portunia Gate 0.16.1 · Mise à jour : 30 octobre 2026*
+*Portunia 0.60.0 · Portunia Gate 0.21.1 · Mise à jour : 2 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -128,6 +128,8 @@ Rangez vos sessions dans des dossiers imbriqués et glissez-les de l'un à l'aut
 
 Une extension désactivée disparaît des menus, mais ses sessions sont conservées. Pour en réactiver une : palette, puis « Extensions ».
 
+SFTP et FTP / FTPS sont dans le **catalogue**, en bas de la page Extensions : cliquez sur « Installer » pour les ajouter à la fenêtre « Nouvelle session ». Si vous aviez déjà des sessions FTP, l'extension est installée d'office.
+
 | Protocole | Pour | À renseigner |
 | --- | --- | --- |
 | **SSH** | Serveurs Linux, équipements réseau. | Hôte, utilisateur, authentification : clé privée, mot de passe ou agent (Pageant, OpenSSH). |
@@ -136,7 +138,8 @@ Une extension désactivée disparaît des menus, mais ses sessions sont conserv�
 | **Shell local** | PowerShell, Invite de commandes, WSL, Git Bash de ce PC. | Rien : panneau **Ce PC** du rail, ou Ctrl+Maj+T pour le shell par défaut. « Ouvrir en administrateur » utilise une fenêtre séparée. |
 | **Telnet** | Anciens équipements. | Hôte. Telnet n'est pas chiffré : réservez-le au réseau local. |
 | **Port série** | Microcontrôleurs, consoles de commutateurs et routeurs. | Port COM, vitesse. Portunia propose les ports présents. |
-| **FTP / FTPS** | Serveurs de fichiers. | Hôte, identifiants. FTPS est le choix par défaut. |
+| **SFTP** | Fichiers d'un serveur Linux, sans terminal. | Comme SSH : hôte, utilisateur, clé, agent ou mot de passe, rebond. Dossiers de départ du serveur et de ce PC, facultatifs. |
+| **FTP / FTPS** | Serveurs de fichiers. | Hôte, identifiants. FTPS explicite est le choix par défaut ; FTPS implicite utilise le port 990. Mode actif et encodage Windows-1252 pour les anciens serveurs. |
 | **Stockage S3** Pro | AWS, MinIO, Scaleway, OVH, Wasabi, R2. | Point d'accès, clés d'accès. Envoi jusqu'à 5 Go par fichier. |
 | **Interface web** | Consoles de NAS, routeur, hyperviseur. | L'adresse. La page s'ouvre dans une fenêtre isolée de Portunia. |
 
@@ -169,7 +172,22 @@ Avant de coller plusieurs lignes, Portunia demande confirmation : un collage peu
 
 ## 8\. Fichiers et transferts
 
-Dans une session SSH, ouvrez le panneau **Fichiers** à droite du terminal. FTP et S3 s'ouvrent directement sur l'explorateur.
+Dans une session SSH, ouvrez le panneau **Fichiers** à droite du terminal. Pour n'avoir que les fichiers, clic droit sur la session SSH, puis « Ouvrir en fichiers seulement (SFTP) » : ses réglages (clé, rebond) servent tels quels.
+
+Les sessions SFTP, FTP et S3 s'ouvrent en **deux volets** : **Ce PC** à gauche, le serveur à droite, la file de transferts en bas.
+
+### Deux volets
+
+| Action | Comment |
+| --- | --- |
+| Choisir plusieurs fichiers | Ctrl+clic, Maj+clic, ou Ctrl+A dans un volet. |
+| Envoyer vers le serveur | Flèche → ou F5. Double-clic sur un fichier de ce PC fait de même. |
+| Récupérer sur ce PC | Flèche ← ou F6, dans le dossier ouvert à gauche. Double-clic sur un fichier du serveur fait de même. |
+| Fichier déjà présent | Règle « Si le fichier existe » de la file : demander, remplacer si plus récent, remplacer, ignorer. « Demander » pose une seule question pour toute la sélection. |
+| Suivre les transferts | Avancement et débit dans la file. « Pause » arrête de lancer les suivants ; la croix retire un transfert en attente. |
+| Fichiers cachés | Bouton « Fichiers masqués » : fichiers commençant par un point, et fichiers cachés de Windows. |
+
+### Panneau Fichiers d'une session SSH
 
 | Action | Comment |
 | --- | --- |
