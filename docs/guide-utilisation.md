@@ -84,7 +84,8 @@ Rien n'est enregistré. La connexion reste dans l'historique récent et « Enreg
 
 | Zone | Rôle |
 | --- | --- |
-| Barre latérale | La recherche, vos sessions par dossiers, la section **Ce PC** (shells locaux), la section **Gates**, l'accès aux extensions, à l'import et aux paramètres. |
+| Rail (colonne d'icônes à gauche) | Choisit le panneau affiché : **Sessions**, **Gates**, **Ce PC** (shells locaux). Dessous : commandes enregistrées, identifiants partagés, enregistrements, assistance, outils réseau, import ; en bas, extensions et paramètres. Un clic sur l'icône du panneau ouvert replie la barre. |
+| Panneau Sessions | Le filtre, les puces, les sessions **épinglées** et **récentes**, puis vos dossiers ; en bas, « Toutes les sessions en tableau ». |
 | Onglets | Une connexion par onglet. Ctrl+Maj+W ferme l'onglet actif. |
 | Barre d'outils de l'onglet | Selon la connexion : rechercher, saisie multiple, écran partagé, fichiers, tunnels, reconnecter, déconnecter. |
 | Barre d'état | L'édition et la version. Cliquez pour accéder à la licence dans Paramètres. |
@@ -101,7 +102,7 @@ Rangez vos sessions dans des dossiers imbriqués et glissez-les de l'un à l'aut
 
 | Sur | Clic droit |
 | --- | --- |
-| Une session | Ouvrir, Modifier, Dupliquer, Sortir du dossier, Supprimer, Ping, traceroute, ports…, Réveiller (Wake-on-LAN, si une adresse MAC est renseignée). |
+| Une session | Ouvrir, Épingler en haut, Modifier, Dupliquer, Sortir du dossier, Supprimer, Ping, traceroute, ports…, Réveiller (Wake-on-LAN, si une adresse MAC est renseignée). |
 | Un dossier | Nouvelle session ici, Nouveau sous-dossier, Renommer, Couleur…, Lancer une commande sur ce dossier… (Pro), Supprimer le dossier. |
 
 > [!WARNING]
@@ -111,7 +112,14 @@ Rangez vos sessions dans des dossiers imbriqués et glissez-les de l'un à l'aut
 
 -   **Écran partagé** : jusqu'à 4 sessions côte à côte (bouton de la barre d'outils, ou « Afficher à côté » sur un onglet).
 -   **Saisie multiple** (Ctrl+Maj+B) : ce que vous tapez part dans toutes les sessions affichées. Le bouton passe à « Saisie multiple : ACTIVE » ; vérifiez-le avant de taper une commande.
--   Ctrl+Maj+K place le curseur dans la recherche de sessions.
+
+### Retrouver une session parmi beaucoup
+
+-   Ctrl+Maj+K place le curseur dans le filtre. Tapez quelques lettres du nom, de l'adresse, du dossier ou d'une étiquette : la liste devient à plat, avec l'adresse et le dossier sous chaque nom. Entrée ouvre la première, ↓ parcourt la liste, Échap efface le filtre.
+-   **Puces** sous le filtre : Connectées, Épinglées, un protocole (SSH, RDP…) ou une étiquette parmi les plus utilisées. Un second clic sur la puce l'enlève.
+-   **Épingler** (étoile au survol, ou clic droit) : la session reste en tête du panneau. Les 5 dernières sessions ouvertes apparaissent sous **Récentes**.
+-   Le filtre s'applique aussi aux serveurs des Gates : une ligne « N serveur(s) dans les Gates » mène au panneau Gates.
+-   **Toutes les sessions en tableau** (en bas du panneau, ou la palette) : un onglet triable par nom, adresse, protocole, dossier, étiquettes ou dernière ouverture, avec des filtres par dossier, protocole et étiquette. Cochez plusieurs sessions pour les ouvrir ensemble ou y lancer une commande (Pro). Double-clic ou Entrée ouvre une session, F2 la modifie.
 
 <a id="protocoles"></a>
 
@@ -124,7 +132,7 @@ Une extension désactivée disparaît des menus, mais ses sessions sont conserv�
 | **SSH** | Serveurs Linux, équipements réseau. | Hôte, utilisateur, authentification : clé privée, mot de passe ou agent (Pageant, OpenSSH). |
 | **Bureau à distance** | Windows. | Hôte, `DOMAINE\utilisateur`, affichage dans un onglet ou dans le client Windows. |
 | **VNC** | Linux, macOS, Raspberry Pi. | Hôte et port. |
-| **Shell local** | PowerShell, Invite de commandes, WSL, Git Bash de ce PC. | Rien : section **Ce PC**, ou Ctrl+Maj+T pour le shell par défaut. « Ouvrir en administrateur » utilise une fenêtre séparée. |
+| **Shell local** | PowerShell, Invite de commandes, WSL, Git Bash de ce PC. | Rien : panneau **Ce PC** du rail, ou Ctrl+Maj+T pour le shell par défaut. « Ouvrir en administrateur » utilise une fenêtre séparée. |
 | **Telnet** | Anciens équipements. | Hôte. Telnet n'est pas chiffré : réservez-le au réseau local. |
 | **Port série** | Microcontrôleurs, consoles de commutateurs et routeurs. | Port COM, vitesse. Portunia propose les ports présents. |
 | **FTP / FTPS** | Serveurs de fichiers. | Hôte, identifiants. FTPS est le choix par défaut. |
@@ -311,7 +319,7 @@ Votre administrateur vous donne l'**adresse de la Gate**, votre **identifiant**,
 
 ### Premier accès
 
-1.  Dans la section **Gates** de la barre latérale, cliquez sur « Ajouter une Gate ». Si elle n'apparaît pas, activez l'extension Portunia Gate dans Extensions.
+1.  Dans le panneau **Gates** (icône du bouclier dans le rail), cliquez sur « Ajouter une Gate ». Si elle n'apparaît pas, activez l'extension Portunia Gate dans Extensions.
 2.  Saisissez l'adresse, par exemple `gate.exemple.fr`.
 3.  **Comparez l'empreinte affichée à celle reçue de votre administrateur.** Si elles diffèrent, arrêtez et prévenez-le.
 4.  Saisissez votre identifiant et votre mot de passe provisoire.
@@ -394,7 +402,7 @@ sftp -P 2222 julien%web-01@gate       # fichiers (coffre, si la règle l'autoris
 Il vous faut Portunia, les extensions Portunia Gate et Assistance à distance activées, une connexion à une Gate dont le relais est actif, et un compte dans son groupe de dépanneurs.
 
 1.  Appelez la personne au téléphone.
-2.  Cliquez sur **Assistance à distance** dans la barre latérale. La fenêtre affiche la phrase à dire, avec l'adresse de la page à ouvrir.
+2.  Cliquez sur **Assistance à distance** (icône de la bouée dans le rail). La fenêtre affiche la phrase à dire, avec l'adresse de la page à ouvrir.
 3.  Quand la personne vous lit ses 9 chiffres, tapez-les puis « Se connecter ».
 4.  La personne voit votre nom et accepte. Son écran s'ouvre dans un onglet.
 
