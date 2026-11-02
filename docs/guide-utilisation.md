@@ -87,7 +87,8 @@ Rien n'est enregistré. La connexion reste dans l'historique récent et « Enreg
 | Rail (colonne d'icônes à gauche) | Choisit le panneau affiché : **Sessions**, **Gates**, **Ce PC** (shells locaux). Dessous : commandes enregistrées, identifiants partagés, enregistrements, assistance, outils réseau, import ; en bas, extensions et paramètres. Un clic sur l'icône du panneau ouvert replie la barre. |
 | Panneau Sessions | Le filtre, les puces, les sessions **épinglées** et **récentes**, puis vos dossiers ; en bas, « Toutes les sessions en tableau ». |
 | Onglets | Une connexion par onglet. Ctrl+Maj+W ferme l'onglet actif. |
-| Barre d'outils de l'onglet | Selon la connexion : rechercher, saisie multiple, écran partagé, fichiers, tunnels, reconnecter, déconnecter. |
+| Barre d'outils de l'onglet | Toujours sur une ligne : l'adresse de la connexion, puis les actions (commandes, recherche, enregistrement, écran partagé, tunnels, clé SSH, modifier), le groupe des **panneaux** (Fichiers, Notes, Serveur, Conteneurs) et Déconnecter. Quand la fenêtre rétrécit, les libellés disparaissent (le nom reste en infobulle), puis les actions rares passent dans le menu **⋯**. |
+| Panneau de droite | Ouvert depuis le groupe des panneaux ; ses onglets passent de Fichiers à Notes, Serveur ou Conteneurs, la croix le ferme. Dans une fenêtre étroite, il s'ouvre par-dessus le terminal. |
 | Barre d'état | L'édition et la version. Cliquez pour accéder à la licence dans Paramètres. |
 
 ### La palette : tout retrouver au clavier
