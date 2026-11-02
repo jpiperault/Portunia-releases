@@ -13,7 +13,7 @@ SSH, Bureau à distance (RDP), VNC, Telnet, FTP, port série, shells locaux et c
 
 ➡️ **[Dernière version](https://github.com/jpiperault/Portunia-releases/releases/latest)** : téléchargez `Portunia_x.y.z_x64-setup.exe` et lancez-le.
 
-- Installation pour l'utilisateur courant, **sans droits administrateur**.
+- Installation **pour vous seul** (sans droits administrateur) ou **pour tous les utilisateurs du PC** (Program Files, droits administrateur demandés). Les mises à jour gardent ce choix.
 - Windows 10 et 11 (64 bits).
 - Portunia **se met ensuite à jour tout seul** : une bannière propose chaque nouvelle version, rien ne s'installe sans votre accord.
 

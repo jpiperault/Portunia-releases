@@ -39,7 +39,7 @@ Portunia réunit vos connexions dans une seule fenêtre Windows. Ce guide s'adre
 ## 2\. Installer Portunia
 
 1.  Téléchargez `Portunia_x.y.z_x64-setup.exe` depuis [la page des versions](https://github.com/jpiperault/Portunia-releases/releases), ou le lien donné par votre entreprise.
-2.  Ouvrez le fichier. L'installation se fait pour votre compte Windows et ne demande pas de droits d'administrateur.
+2.  Ouvrez le fichier et choisissez : **pour moi seulement** (sans droits d'administrateur, dans votre profil Windows) ou **pour tous les utilisateurs de ce PC** (dans Program Files, droits d'administrateur demandés). Les mises à jour gardent ce choix ; une installation pour tous demande l'autorisation de Windows à chaque mise à jour.
 3.  Si Windows SmartScreen avertit, cliquez sur « Informations complémentaires » puis « Exécuter quand même ». L'installateur n'a pas encore de certificat de signature de code.
 4.  Lancez Portunia. Il s'affiche dans la langue de Windows, en anglais ou en français.
 
