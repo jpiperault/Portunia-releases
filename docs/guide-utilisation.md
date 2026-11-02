@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.61.0 · Portunia Gate 0.21.1 · Mise à jour : 2 novembre 2026*
+*Portunia 0.62.0 · Portunia Gate 0.22.0 · Mise à jour : 2 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -133,7 +133,7 @@ SFTP et FTP / FTPS sont dans le **catalogue**, en bas de la page Extensions : cl
 | Protocole | Pour | À renseigner |
 | --- | --- | --- |
 | **SSH** | Serveurs Linux, équipements réseau. | Hôte, utilisateur, authentification : clé privée, mot de passe ou agent (Pageant, OpenSSH). |
-| **Bureau à distance** | Windows. | Hôte, `DOMAINE\utilisateur`, affichage dans un onglet ou dans le client Windows. |
+| **Bureau à distance** | Windows. | Hôte, `DOMAINE\utilisateur`, affichage dans un onglet ou dans le client Windows. Dans un onglet, Portunia exige NLA, comme Windows par défaut : un faux serveur ne peut pas obtenir votre mot de passe. Pour un serveur de confiance qui ne le propose pas (xrdp sous Linux, ancien Windows), cochez « Accepter les serveurs sans NLA ». |
 | **VNC** | Linux, macOS, Raspberry Pi. | Hôte et port. |
 | **Shell local** | PowerShell, Invite de commandes, WSL, Git Bash de ce PC. | Rien : panneau **Ce PC** du rail, ou Ctrl+Maj+T pour le shell par défaut. « Ouvrir en administrateur » utilise une fenêtre séparée. |
 | **Telnet** | Anciens équipements. | Hôte. Telnet n'est pas chiffré : réservez-le au réseau local. |

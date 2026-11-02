@@ -22,11 +22,13 @@ SSH, Remote Desktop (RDP), VNC, Telnet, FTP, serial port, local shells and web c
 **Connections**
 - **SSH** compatible with OpenSSH 10: private key (PuTTY `.ppk` keys included), password or agent (Pageant / OpenSSH), chained jump hosts, compatibility mode for older equipment.
 - **Remote Desktop (RDP)** in a tab, with shared clipboard and a screen fitted to the window, or in the Windows client if you prefer.
-- **VNC**, **Telnet**, **serial port** (COM ports detected automatically), **FTP / FTPS** and **web consoles**.
+- **VNC**, **Telnet**, **serial port** (COM ports detected automatically) and **web consoles**.
+- **SFTP and FTP / FTPS** in two panes (this PC and the server), installed from the extensions catalogue: implicit FTPS, active mode, transfer queue.
 - **Local shells**: PowerShell, Command Prompt, WSL distributions, Git Bash.
 - **Quick connect**: type `ssh deploy@10.0.1.12`, `rdp srv-01` or just an address, without creating a session.
 
 **Day to day**
+- **Two-pane file sessions** (SFTP, FTP, S3): arrows or F5 / F6, multiple selection, transfer queue with speed and an "if the file exists" rule.
 - **SFTP file browser** next to the terminal: drag and drop files and whole folders, edit a remote file in your usual editor with automatic upload.
 - **Split screen** with up to 4 sessions, and **multi-input** to type the same command on several servers.
 - **Saved commands** (Ctrl+Shift+P), **SSH tunnels** (local port, SOCKS proxy, remote port), **X11**, **automatic reconnection**.
@@ -50,7 +52,7 @@ Portunia connects to [Portunia Gate](https://github.com/jpiperault/Portunia-Gate
 
 Portunia is **free for personal use**, with every protocol.
 
-- **Pro**: session recording, server dashboard, command on several servers, Docker and Kubernetes containers, monitoring alerts, S3 storage.
+- **Pro**: session recording, server dashboard, command on several servers, Docker and Kubernetes containers, monitoring alerts, S3 storage, compare and synchronise folders.
 - **Teams**: administration and audit of Portunia Gate from Portunia (session replay, audit log, web portal).
 
 During the preview, every feature is unlocked.

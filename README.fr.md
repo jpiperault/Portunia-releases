@@ -22,11 +22,13 @@ SSH, Bureau à distance (RDP), VNC, Telnet, FTP, port série, shells locaux et c
 **Connexions**
 - **SSH** compatible OpenSSH 10 : clé privée (y compris les clés PuTTY `.ppk`), mot de passe ou agent (Pageant / OpenSSH), serveurs de rebond enchaînés, mode compatibilité pour les anciens équipements.
 - **Bureau à distance (RDP)** dans un onglet, avec presse-papiers partagé et écran adapté à la taille de la fenêtre, ou dans le client Windows au choix.
-- **VNC**, **Telnet**, **port série** (ports COM détectés automatiquement), **FTP / FTPS** et **consoles web**.
+- **VNC**, **Telnet**, **port série** (ports COM détectés automatiquement) et **consoles web**.
+- **SFTP et FTP / FTPS** en deux volets (ce PC et le serveur), à installer depuis le catalogue d'extensions : FTPS implicite, mode actif, file de transferts.
 - **Shells locaux** : PowerShell, Invite de commandes, distributions WSL, Git Bash.
 - **Connexion rapide** : tapez `ssh deploy@10.0.1.12`, `rdp srv-01` ou une simple adresse, sans créer de session.
 
 **Au quotidien**
+- **Sessions de fichiers à deux volets** (SFTP, FTP, S3) : flèches ou F5 / F6, sélection multiple, file de transferts avec débit et règle « si le fichier existe ».
 - **Explorateur de fichiers SFTP** à côté du terminal : glisser-déposer de fichiers et de dossiers entiers, édition d'un fichier distant dans votre éditeur habituel avec renvoi automatique.
 - **Écran partagé** jusqu'à 4 sessions, et **saisie multiple** pour taper la même commande sur plusieurs serveurs.
 - **Commandes enregistrées** (Ctrl+Maj+P), **tunnels SSH** (port local, proxy SOCKS, port distant), **X11**, **reconnexion automatique**.
@@ -50,7 +52,7 @@ Portunia se connecte à [Portunia Gate](https://github.com/jpiperault/Portunia-G
 
 Portunia est **gratuit pour un usage personnel**, avec tous les protocoles.
 
-- **Pro** : enregistrement des sessions, tableau de bord des serveurs, commande sur plusieurs serveurs, conteneurs Docker et Kubernetes, alertes de supervision, stockage S3.
+- **Pro** : enregistrement des sessions, tableau de bord des serveurs, commande sur plusieurs serveurs, conteneurs Docker et Kubernetes, alertes de supervision, stockage S3, comparaison et synchronisation de dossiers.
 - **Équipes** : administration et audit de Portunia Gate depuis Portunia (relecture des sessions, journal, portail web).
 
 Pendant l'avant-première, toutes les fonctions sont débloquées.
