@@ -37,8 +37,8 @@ SSH, Bureau à distance (RDP), VNC, Telnet, FTP, port série, shells locaux et c
 
 ![Écran partagé en thème clair](docs/termoria-ecran-partage-clair.png)
 
-**Bastion Heimdia**
-Portunia se connecte au bastion [Heimdia](https://github.com/jpiperault/Heimdia-releases) : contrôle d’accès, double authentification, comptes des serveurs gardés dans un coffre, sessions SSH et Bureau à distance enregistrées, relecture comme une vidéo et journal infalsifiable. Les serveurs autorisés apparaissent dans la barre latérale et s’ouvrent d’un clic.
+**Portunia Gate**
+Portunia se connecte à [Portunia Gate](https://github.com/jpiperault/Portunia-Gate-releases), sa passerelle SSH et Bureau à distance : contrôle d’accès, double authentification, comptes des serveurs gardés dans un coffre, sessions SSH et Bureau à distance enregistrées, relecture comme une vidéo, journal infalsifiable, portail web et assistance à distance. Les serveurs autorisés apparaissent dans la barre latérale et s’ouvrent d’un clic.
 
 **Sécurité**
 - Mots de passe rangés dans le **Gestionnaire d'identifiants Windows**, jamais en clair sur le disque ; données chiffrées dès qu'un mot de passe maître est défini.
@@ -51,9 +51,14 @@ Portunia se connecte au bastion [Heimdia](https://github.com/jpiperault/Heimdia-
 Portunia est **gratuit pour un usage personnel**, avec tous les protocoles.
 
 - **Pro** : enregistrement des sessions, tableau de bord des serveurs, commande sur plusieurs serveurs, conteneurs Docker et Kubernetes, alertes de supervision, stockage S3.
-- **Équipes** : administration et audit du bastion Heimdia depuis Portunia (relecture des sessions, journal, portail web).
+- **Équipes** : administration et audit de Portunia Gate depuis Portunia (relecture des sessions, journal, portail web).
 
 Pendant l'avant-première, toutes les fonctions sont débloquées.
+
+## Documentation
+
+- **[Guide d'utilisation](docs/guide-utilisation.md)** : installation, sessions, tous les protocoles, fichiers, tunnels, connexion par une Gate, portail web, assistance à distance, raccourcis, dépannage.
+- **[Guide d'administration](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md)** : installer et exploiter Portunia Gate.
 
 ## Signaler un problème
 

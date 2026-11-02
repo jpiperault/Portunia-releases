@@ -37,8 +37,8 @@ SSH, Remote Desktop (RDP), VNC, Telnet, FTP, serial port, local shells and web c
 
 ![Split screen in light theme](docs/termoria-ecran-partage-clair.png)
 
-**Heimdia bastion**
-Portunia connects to the [Heimdia](https://github.com/jpiperault/Heimdia-releases) bastion: access control, two-factor sign-in, server accounts kept in a vault, recorded SSH and Remote Desktop sessions, video-like replay and a tamper-evident audit log. Allowed servers appear in the sidebar and open with one click.
+**Portunia Gate**
+Portunia connects to [Portunia Gate](https://github.com/jpiperault/Portunia-Gate-releases), its SSH and Remote Desktop gateway: access control, two-factor sign-in, server accounts kept in a vault, recorded SSH and Remote Desktop sessions, video-like replay, a tamper-evident audit log, a web portal and remote assistance. Allowed servers appear in the sidebar and open with one click.
 
 **Security**
 - Passwords stored in the **Windows Credential Manager**, never in clear text on disk; data encrypted as soon as a master password is set.
@@ -51,9 +51,14 @@ Portunia connects to the [Heimdia](https://github.com/jpiperault/Heimdia-release
 Portunia is **free for personal use**, with every protocol.
 
 - **Pro**: session recording, server dashboard, command on several servers, Docker and Kubernetes containers, monitoring alerts, S3 storage.
-- **Teams**: administration and audit of the Heimdia bastion from Portunia (session replay, audit log, web portal).
+- **Teams**: administration and audit of Portunia Gate from Portunia (session replay, audit log, web portal).
 
 During the preview, every feature is unlocked.
+
+## Documentation
+
+- **[User guide](docs/guide-utilisation.md)** (French): install, sessions, every protocol, files, tunnels, connecting through a Gate, web portal, remote assistance, shortcuts, troubleshooting.
+- **[Administration guide](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md)** (French): installing and running Portunia Gate.
 
 ## Reporting a problem
 
