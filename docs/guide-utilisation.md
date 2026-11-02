@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.60.0 · Portunia Gate 0.21.1 · Mise à jour : 2 novembre 2026*
+*Portunia 0.61.0 · Portunia Gate 0.21.1 · Mise à jour : 2 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -186,6 +186,19 @@ Les sessions SFTP, FTP et S3 s'ouvrent en **deux volets** : **Ce PC** à gauche,
 | Fichier déjà présent | Règle « Si le fichier existe » de la file : demander, remplacer si plus récent, remplacer, ignorer. « Demander » pose une seule question pour toute la sélection. |
 | Suivre les transferts | Avancement et débit dans la file. « Pause » arrête de lancer les suivants ; la croix retire un transfert en attente. |
 | Fichiers cachés | Bouton « Fichiers masqués » : fichiers commençant par un point, et fichiers cachés de Windows. |
+
+### Comparer et synchroniser Pro
+
+Le bouton **Comparer et synchroniser** des deux volets compare le dossier ouvert sur ce PC et celui du serveur, sous-dossiers compris. La comparaison ne copie rien : elle liste les écarts et la raison de chacun.
+
+| Réglage | Effet |
+| --- | --- |
+| Sens | **Envoyer** met le serveur à jour, **Récupérer** met ce PC à jour, **Les deux** copie chaque fichier vers le côté où il est plus ancien ou absent. |
+| Comparer par | Date et taille (conseillé), ou taille seulement quand les horloges ne sont pas fiables. |
+| Exclure | Motifs séparés par des espaces : `.git/` pour un dossier, `*.log` pour des noms, `dist/*.map` pour un chemin. |
+| Supprimer sur le serveur | En envoi seulement, décoché par défaut : retire du serveur ce qui n'existe plus sur ce PC, après confirmation. Rien n'est jamais supprimé sur ce PC. |
+
+Les lignes en orange sont à trancher : même date mais contenu différent, ou fichier d'un côté et dossier de l'autre. Choisissez « Envoyer », « Récupérer » ou « Ignorer ». Un fichier plus récent du côté d'arrivée n'est pas coché d'office. « Synchroniser » place les copies dans la file de transferts ; les deux volets se rechargent à la fin. Les copies gardent la date de l'original (en FTP, si le serveur accepte MFMT ; pas en S3), si bien qu'une nouvelle comparaison les voit identiques.
 
 ### Panneau Fichiers d'une session SSH
 
