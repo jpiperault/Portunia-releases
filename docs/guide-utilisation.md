@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.62.0 · Portunia Gate 0.22.0 · Mise à jour : 2 novembre 2026*
+*Portunia 0.62.0 · Portunia Gate 0.28.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -408,6 +408,7 @@ Si votre entreprise l'a activé, le portail ouvre vos serveurs depuis un navigat
 | --- | --- |
 | Serveur SSH | Un terminal avec les boutons Copier et Coller. En mode enregistré, vos identifiants sont demandés dans le terminal. |
 | Serveur Windows | Identifiants Windows demandés, puis boutons Ctrl+Alt+Suppr et Plein écran. Ils sont envoyés au serveur par une connexion chiffrée : la Gate ne voit pas votre mot de passe. |
+| Fichiers avec un serveur Windows | Si votre administrateur l'autorise : **Envoyer des fichiers** (ou déposez-les sur le bureau), puis collez-les dans Windows avec Ctrl+V. Pour en récupérer, copiez-les dans Windows (Ctrl+C) : ils apparaissent dans le panneau Fichiers, avec un bouton Télécharger. Chaque fichier copié est noté par la Gate. Sans autorisation, la copie de fichiers est bloquée, le copier-coller de texte reste possible. |
 | Serveur en mode rebond | Pas disponible sur le portail : utilisez Portunia. |
 | Inactivité | « Toujours là ? » s'affiche avant la fermeture : cliquez sur Continuer. |
 
