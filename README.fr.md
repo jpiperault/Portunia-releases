@@ -7,7 +7,7 @@ SSH, Bureau à distance (RDP), VNC, Telnet, FTP, port série, shells locaux et c
 
 > Portunia s'appelait **Termoria** jusqu'à la version 0.39. Une installation de Termoria passe à Portunia par la mise à jour automatique et garde ses sessions, son coffre et ses réglages.
 
-![Portunia : arbre des sessions, terminal SSH et explorateur de fichiers](docs/termoria-sombre.png)
+![Portunia : arbre des sessions, terminal SSH et explorateur de fichiers](docs/portunia-main-fr.png)
 
 ## Télécharger
 
@@ -38,7 +38,9 @@ SSH, Bureau à distance (RDP), VNC, Telnet, FTP, port série, shells locaux et c
 - **Dossiers et sous-dossiers**, **couleurs par dossier** (repérez la production d'un coup d'œil), thème clair ou sombre, 9 palettes de terminal, en français ou en anglais (selon Windows, ou à votre choix).
 - **Import** depuis `~/.ssh/config`, PuTTY et mRemoteNG.
 
-![Écran partagé en thème clair](docs/termoria-ecran-partage-clair.png)
+![Écran partagé en thème clair, avec l'explorateur de fichiers](docs/portunia-split-fr.png)
+
+![Proxmox VE : machines et conteneurs dans la barre latérale, courbes de supervision par nœud](docs/portunia-proxmox-fr.png)
 
 **Portunia Gate**
 Portunia se connecte à [Portunia Gate](https://github.com/jpiperault/Portunia-Gate-releases), sa passerelle SSH et Bureau à distance : contrôle d’accès, double authentification, comptes des serveurs gardés dans un coffre, sessions SSH et Bureau à distance enregistrées, relecture comme une vidéo, journal infalsifiable, portail web et assistance à distance. Les serveurs autorisés apparaissent dans la barre latérale et s’ouvrent d’un clic.
@@ -57,6 +59,8 @@ Portunia est **gratuit pour un usage personnel**, avec tous les protocoles.
 - **Équipes** : administration et audit de Portunia Gate depuis Portunia (relecture des sessions, journal, portail web).
 
 Pendant l'avant-première, toutes les fonctions sont débloquées.
+
+![Tableau de bord du serveur à côté du terminal : processeur, mémoire, disques, services en échec, processus les plus actifs](docs/portunia-server-fr.png)
 
 ## Documentation
 

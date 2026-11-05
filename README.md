@@ -7,7 +7,7 @@ SSH, Remote Desktop (RDP), VNC, Telnet, FTP, serial port, local shells and web c
 
 > Portunia was called **Termoria** until version 0.39. A Termoria install moves to Portunia through the automatic update and keeps its sessions, vault and settings.
 
-![Portunia: session tree, SSH terminal and file browser](docs/termoria-sombre.png)
+![Portunia: session tree, SSH terminal and file browser](docs/portunia-main-en.png)
 
 ## Download
 
@@ -38,7 +38,9 @@ SSH, Remote Desktop (RDP), VNC, Telnet, FTP, serial port, local shells and web c
 - **Folders and sub-folders**, **colours per folder** (spot production at a glance), light or dark theme, 9 terminal palettes, in English or French (following Windows, or your choice).
 - **Import** from `~/.ssh/config`, PuTTY and mRemoteNG.
 
-![Split screen in light theme](docs/termoria-ecran-partage-clair.png)
+![Split screen in light theme, with the file browser](docs/portunia-split-en.png)
+
+![Proxmox VE: machines and containers in the sidebar, monitoring charts per node](docs/portunia-proxmox-en.png)
 
 **Portunia Gate**
 Portunia connects to [Portunia Gate](https://github.com/jpiperault/Portunia-Gate-releases), its SSH and Remote Desktop gateway: access control, two-factor sign-in, server accounts kept in a vault, recorded SSH and Remote Desktop sessions, video-like replay, a tamper-evident audit log, a web portal and remote assistance. Allowed servers appear in the sidebar and open with one click.
@@ -57,6 +59,8 @@ Portunia is **free for personal use**, with every protocol.
 - **Teams**: administration and audit of Portunia Gate from Portunia (session replay, audit log, web portal).
 
 During the preview, every feature is unlocked.
+
+![Server dashboard next to the terminal: CPU, memory, disks, failed services, busiest processes](docs/portunia-server-en.png)
 
 ## Documentation
 
