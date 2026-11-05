@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.70.0 · Portunia Gate 0.30.0 · Updated: 5 November 2026*
+*Portunia 0.70.1 · Portunia Gate 0.30.0 · Updated: 5 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -319,6 +319,8 @@ A key replaces the password and resists attacks much better. Palette, then "SSH 
 Install the **Proxmox VE** extension from the catalogue (Extensions › Catalogue, Pro plan; Portunia 0.67.1): a **Proxmox** icon appears in the left bar. **+** adds a server: its address (port 8006 by default), then the **certificate fingerprint** to compare with Proxmox's (node › System › Certificates), the user (`root@pam`, `admin@pve`…) and an **API token** (recommended: Datacenter › Permissions › API Tokens, without "Privilege Separation" to keep the user's rights) or a password. The secret stays in the Windows Credential Manager. An account with two-factor authentication needs a token. Several servers or clusters can be added.
 
 A token created with "Privilege Separation" has **no rights** until it is given some, even for `root@pam`: Proxmox then shows the node but no machine, and Portunia shows "No right to see the machines". Give it a permission: Datacenter › Permissions › Add › API Token Permission, path `/`, role `PVEVMAdmin` (or `PVEAuditor` to only look), then **Refresh**.
+
+Proxmox **does not open consoles with an API token** (machines, containers, node shells): the console ticket is tied to a user. With a token, also fill in **Password for consoles** (the user's, e.g. `root@pam`) in the server's form ("…" › Edit); Portunia checks it when saving, keeps it in the Windows Credential Manager and only uses it to open consoles (Portunia 0.70.1). Everything else still goes through the token.
 
 Under each server, its nodes (processor load) then their virtual machines and containers (green dot: running). The state is updated every 30 seconds; the session filter also applies (ID, name, node, tag). A click opens the **console** of a running machine in a tab; right-click gives the rest.
 

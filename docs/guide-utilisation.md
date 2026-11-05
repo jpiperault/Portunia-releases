@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.70.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.70.1 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -319,6 +319,8 @@ La **supervision** teste si vos serveurs répondent (toutes les 30 secondes, min
 Installez l'extension **Proxmox VE** depuis le catalogue (Extensions › Catalogue, offre Pro ; Portunia 0.67.1) : une icône **Proxmox** apparaît dans la barre de gauche. **+** ajoute un serveur : son adresse (port 8006 par défaut), puis l'**empreinte du certificat** à comparer avec celle de Proxmox (nœud › Système › Certificats), l'utilisateur (`root@pam`, `admin@pve`…) et un **jeton d'API** (conseillé : Datacenter › Permissions › API Tokens, sans « Privilege Separation » pour garder les droits de l'utilisateur) ou un mot de passe. Le secret reste dans le Gestionnaire d'identifiants de Windows. Un compte à double authentification demande un jeton. Plusieurs serveurs ou clusters peuvent être ajoutés.
 
 Un jeton créé avec « Privilege Separation » n'a **aucun droit** tant qu'on ne lui en donne pas, même pour `root@pam` : Proxmox montre alors le nœud mais aucune machine, et Portunia affiche « Aucun droit de voir les machines ». Donnez-lui une permission : Datacenter › Permissions › Ajouter › Permission de jeton d'API, chemin `/`, rôle `PVEVMAdmin` (ou `PVEAuditor` pour seulement regarder), puis **Actualiser**.
+
+Proxmox **n'ouvre pas les consoles avec un jeton d'API** (machines, conteneurs, shell des nœuds) : le ticket de console est lié à un utilisateur. Avec un jeton, remplissez aussi **Mot de passe des consoles** (celui de l'utilisateur, par ex. `root@pam`) dans la fiche du serveur (« … » › Modifier) ; Portunia le vérifie à l'enregistrement, le garde dans le Gestionnaire d'identifiants et ne s'en sert que pour ouvrir les consoles (Portunia 0.70.1). Le reste continue de passer par le jeton.
 
 Sous chaque serveur, ses nœuds (charge du processeur) puis leurs machines virtuelles et conteneurs (point vert : en marche). L'état se met à jour toutes les 30 secondes ; le filtre des sessions s'applique aussi (numéro, nom, nœud, étiquette). Un clic ouvre la **console** d'une machine en marche dans un onglet ; le clic droit donne le reste.
 
