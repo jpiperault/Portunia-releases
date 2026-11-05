@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.66.0 · Portunia Gate 0.29.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.67.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -404,6 +404,10 @@ Portunia peut signaler que certaines de vos sessions personnelles visent directe
 ### Serveurs Windows
 
 Ils portent un badge RDP et demandent l'extension Bureau à distance. Vos identifiants Windows sont demandés à chaque ouverture, sauf pour les serveurs en mode **coffre** (Gate 0.29) : la Gate ouvre alors la session Windows elle-même, sans que vous voyiez le mot de passe. Dans le portail web, les serveurs Windows en mode rebond s'ouvrent aussi : la Gate les relaie, sans les enregistrer.
+
+### Interfaces web
+
+Les consoles d'administration (vCenter, iDRAC, pare-feu…) portent un badge WEB (Gate 0.30, Portunia 0.67, extension Interface web). Un clic ouvre l'application dans une fenêtre dédiée, par la Gate ; vous y tapez vos identifiants comme d'habitude. La Gate note les pages que vous ouvrez. Dans le portail web, elle s'ouvre dans un nouvel onglet ; une seule interface web à la fois par navigateur.
 
 > [!WARNING]
 > **Téléphone perdu ou changé** — Sans le téléphone, vous ne pouvez plus générer de code. Demandez à votre administrateur de réinitialiser votre code ; vous referez l'étape du QR code à la prochaine connexion.
