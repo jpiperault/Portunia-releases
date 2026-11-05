@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.62.0 · Portunia Gate 0.28.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.65.0 · Portunia Gate 0.29.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -239,6 +239,18 @@ Les ports de votre PC n'écoutent que sur `127.0.0.1` : les autres machines du r
 
 En Bureau à distance dans un onglet, le bureau distant s'adapte à la taille de l'onglet. Choisissez « Client Windows (mstsc) » pour le plein écran, tous vos écrans, ou si une fonction manque dans l'onglet.
 
+### Options du Bureau à distance (Portunia 0.65)
+
+| Option | Onglet | Client Windows | Détail |
+| --- | --- | --- | --- |
+| Résolution | Oui | Oui | « Celle de l'onglet ou de la fenêtre » (par défaut) ou une taille fixe (1280 × 720 à 2560 × 1440) : l'image est alors mise à l'échelle. |
+| Couleurs | Oui | Oui | 32, 24 ou 16 bits ; 16 bits allège une liaison lente. |
+| Jouer le son du serveur ici | Oui | Oui | Activé par défaut. |
+| Passerelle Bureau à distance | Oui | Oui | Serveurs joints par une passerelle RD (HTTPS, port 443 par défaut). Sans compte de passerelle, les identifiants du serveur servent aussi pour elle. Le client Windows demande lui-même le mot de passe de la passerelle. |
+| Partager les lecteurs, les imprimantes | — | Oui | Les disques et imprimantes de ce poste apparaissent dans la session. |
+| Session d'administration (console) | — | Oui | Comme `mstsc /admin`. |
+| RemoteApp | — | Oui | La fenêtre d'un seul programme (chemin sur le serveur, ou `\|\|alias` publié) au lieu du bureau entier. Le serveur doit autoriser ce programme. |
+
 En VNC, la résolution reste celle du serveur.
 
 <a id="commandes"></a>
@@ -374,7 +386,7 @@ Portunia peut signaler que certaines de vos sessions personnelles visent directe
 
 ### Serveurs Windows
 
-Ils portent un badge RDP et demandent l'extension Bureau à distance. Vos identifiants Windows sont demandés à chaque ouverture.
+Ils portent un badge RDP et demandent l'extension Bureau à distance. Vos identifiants Windows sont demandés à chaque ouverture, sauf pour les serveurs en mode **coffre** (Gate 0.29) : la Gate ouvre alors la session Windows elle-même, sans que vous voyiez le mot de passe. Dans le portail web, les serveurs Windows en mode rebond s'ouvrent aussi : la Gate les relaie, sans les enregistrer.
 
 > [!WARNING]
 > **Téléphone perdu ou changé** — Sans le téléphone, vous ne pouvez plus générer de code. Demandez à votre administrateur de réinitialiser votre code ; vous referez l'étape du QR code à la prochaine connexion.
