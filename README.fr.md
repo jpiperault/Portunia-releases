@@ -63,6 +63,10 @@ Pendant l'avant-première, toutes les fonctions sont débloquées.
 - **[Guide d'utilisation](docs/guide-utilisation.md)** (aussi [en anglais](docs/user-guide.md)) : installation, sessions, tous les protocoles, fichiers, tunnels, connexion par une Gate, portail web, assistance à distance, raccourcis, dépannage.
 - **[Guide d'administration](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md)** : installer et exploiter Portunia Gate.
 
+## Feuille de route
+
+Ce qui est prévu : voir la [feuille de route](ROADMAP.fr.md).
+
 ## Signaler un problème
 
 Ouvrez une [issue](https://github.com/jpiperault/Portunia-releases/issues) en décrivant ce que vous faisiez, le message affiché et la version de Portunia (en bas à droite de la fenêtre).

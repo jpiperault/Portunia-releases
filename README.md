@@ -63,6 +63,10 @@ During the preview, every feature is unlocked.
 - **[User guide](docs/user-guide.md)** (also [in French](docs/guide-utilisation.md)): install, sessions, every protocol, files, tunnels, connecting through a Gate, web portal, remote assistance, shortcuts, troubleshooting.
 - **[Administration guide](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md)** (also in French): installing and running Portunia Gate.
 
+## Roadmap
+
+What is planned next: see the [roadmap](ROADMAP.md).
+
 ## Reporting a problem
 
 Open an [issue](https://github.com/jpiperault/Portunia-releases/issues) describing what you were doing, the message shown and the Portunia version (bottom right of the window).
