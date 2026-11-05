@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.69.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.70.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -325,8 +325,8 @@ Sous chaque serveur, ses nœuds (charge du processeur) puis leurs machines virtu
 | Où | Actions |
 | --- | --- |
 | Machine ou conteneur (clic droit) | Console ; démarrer, éteindre, redémarrer, mettre en pause et reprendre (machines virtuelles), arrêter (coupure, avec confirmation) ; **Instantanés** (prendre, avec la mémoire si la machine tourne, revenir, supprimer) ; **Sauvegardes** (sauvegarder maintenant sur un stockage, mode et compression ; lister, restaurer par-dessus, supprimer) ; **Cloner** (nouveau numéro proposé, nœud cible, copie complète ou liée depuis un modèle) ; **Migrer** vers un autre nœud, à chaud si elle tourne ; **Ressources et réglages** (cœurs, processeurs, mémoire, démarrage avec le nœud, notes, tous les réglages en lecture) ; Tâches ; convertir en modèle ; supprimer (en tapant son numéro). |
-| Nœud (clic droit) | **Supervision** de ce nœud ; shell du nœud dans un onglet ; stockages ; tâches. |
-| Serveur (menu « … ») | **Supervision** ; actualiser ; tâches du cluster ; stockages (place occupée, contenu : images ISO, modèles, disques, sauvegardes) ; modifier ; copier l'empreinte ; retirer de Portunia. |
+| Nœud (clic droit) | **Supervision** de ce nœud ; shell du nœud dans un onglet ; **créer une machine virtuelle** ou **un conteneur** ; **mises à jour**, **services**, **journal système**, **réseau**, **disques** ; stockages ; tâches ; **redémarrer** ou **éteindre le nœud** (voir ci-dessous). |
+| Serveur (menu « … ») | **Supervision** ; créer une machine virtuelle ou un conteneur (nœud au choix) ; actualiser ; tâches du cluster ; stockages (place occupée, contenu : images ISO, modèles, disques, sauvegardes) ; modifier ; copier l'empreinte ; retirer de Portunia. |
 
 <a id="proxmox-supervision"></a>
 
@@ -341,7 +341,33 @@ Menu « … » du serveur (ou clic droit sur un nœud) › **Supervision** : un 
 
 Les courbes des nœuds demandent le droit `Sys.Audit` (rôle `PVEAuditor`, par exemple), celles des machines `VM.Audit`.
 
-Chaque action lance une tâche Proxmox : Portunia la suit et annonce son résultat. Les consoles utilisent la console VNC de Proxmox, relayée par Portunia : l'extension **VNC** doit être activée. Les droits sont ceux de l'utilisateur ou du jeton dans Proxmox. Pour créer une machine, clonez un modèle.
+Chaque action lance une tâche Proxmox : Portunia la suit et annonce son résultat. Les consoles utilisent la console VNC de Proxmox, relayée par Portunia : l'extension **VNC** doit être activée. Les droits sont ceux de l'utilisateur ou du jeton dans Proxmox.
+
+<a id="proxmox-creer"></a>
+
+#### Créer une machine ou un conteneur (Portunia 0.70)
+
+| Assistant | Ce qu'on choisit |
+| --- | --- |
+| **Machine virtuelle** | Nœud, numéro (le premier libre est proposé), nom, système (Linux, Windows 11 / Server 2022-2025, Windows 10 / Server 2016-2019, autre), **ISO d'installation** parmi celles des stockages (« Télécharger une ISO… » la fait récupérer par le nœud depuis une adresse web), cœurs, mémoire, type de processeur, stockage et taille du disque, pont réseau et étiquette VLAN, agent invité QEMU, démarrage après la création et avec le nœud. |
+| **Conteneur** | Nœud, numéro, nom d'hôte, **modèle** (« Obtenir des modèles… » ouvre le catalogue de Proxmox : Debian, Ubuntu, Alpine…), mot de passe root et/ou clés SSH, cœurs, mémoire, swap, disque, conteneur non privilégié et imbrication (cochés par défaut), pont, VLAN, IPv4 en DHCP ou fixe avec passerelle, IPv6, serveur DNS. |
+
+Pour Windows 11, la machine reçoit l'UEFI, le Secure Boot et un TPM. Choisissez aussi l'ISO des **pilotes VirtIO** (`virtio-win.iso`) : disque et carte réseau sont alors en VirtIO, les plus rapides. Sans elle, Windows reçoit un disque SATA et une carte Intel E1000, que son installateur reconnaît d'office. La création demande les droits `VM.Allocate` et `Datastore.AllocateSpace` (rôle `PVEVMAdmin` et `PVEDatastoreUser`, par exemple).
+
+<a id="proxmox-noeud"></a>
+
+#### Gérer un nœud (Portunia 0.70)
+
+| Menu du nœud | Effet |
+| --- | --- |
+| Mises à jour | Version de Proxmox et du noyau, paquets à mettre à jour ; « Rafraîchir la liste » (apt update) ; « Mettre à jour dans un shell » ouvre le shell du nœud et y lance `apt dist-upgrade`, comme Proxmox, où l'on répond à ses questions. Proxmox ne le permet qu'à `root@pam`. |
+| Services | État des services de Proxmox (pveproxy, pvedaemon, corosync, sshd, postfix…) : démarrer, arrêter, redémarrer. Une confirmation est demandée pour ceux dont l'arrêt peut couper l'accès au nœud. |
+| Journal système | Les 200, 500 ou 2000 dernières lignes, avec un filtre. |
+| Réseau | Interfaces, ponts, adresses, passerelle, ports, en lecture seule : une erreur de réseau peut couper le nœud, la modification reste dans l'interface web de Proxmox. |
+| Disques | Disques physiques : type, modèle, taille, usage (LVM, ZFS…), santé et usure des SSD ; « SMART » affiche les attributs. |
+| Redémarrer, éteindre le nœud | Après avoir tapé le nom du nœud. Les machines en marche sont d'abord éteintes. Un nœud éteint se rallume sur place ou par sa carte de gestion. |
+
+Droits utiles : `Sys.Audit` pour lire, `Sys.Modify` pour les services et les mises à jour, `Sys.PowerMgmt` pour redémarrer ou éteindre, `Sys.Syslog` pour le journal (rôle `Administrator` sur le nœud, par exemple).
 
 <a id="verrou"></a>
 

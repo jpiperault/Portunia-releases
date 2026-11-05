@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.69.0 · Portunia Gate 0.30.0 · Updated: 5 November 2026*
+*Portunia 0.70.0 · Portunia Gate 0.30.0 · Updated: 5 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -325,8 +325,8 @@ Under each server, its nodes (processor load) then their virtual machines and co
 | Where | Actions |
 | --- | --- |
 | Machine or container (right-click) | Console; start, shut down, reboot, pause and resume (virtual machines), stop (power off, with confirmation); **Snapshots** (take, with memory if the machine is running, roll back, delete); **Backups** (back up now to a storage, mode and compression; list, restore over it, delete); **Clone** (new ID suggested, target node, full or linked copy from a template); **Migrate** to another node, live if it is running; **Resources and settings** (cores, sockets, memory, start with the node, notes, all settings read-only); Tasks; convert to template; delete (by typing its ID). |
-| Node (right-click) | **Monitoring** of this node; node shell in a tab; storage; tasks. |
-| Server ("…" menu) | **Monitoring**; refresh; cluster tasks; storage (space used, content: ISO images, templates, disks, backups); edit; copy the fingerprint; remove from Portunia. |
+| Node (right-click) | **Monitoring** of this node; node shell in a tab; **create a virtual machine** or **a container**; **updates**, **services**, **system log**, **network**, **disks**; storage; tasks; **restart** or **shut down the node** (see below). |
+| Server ("…" menu) | **Monitoring**; create a virtual machine or a container (node of your choice); refresh; cluster tasks; storage (space used, content: ISO images, templates, disks, backups); edit; copy the fingerprint; remove from Portunia. |
 
 <a id="proxmox-supervision"></a>
 
@@ -341,7 +341,33 @@ The server's "…" menu (or right-click on a node) › **Monitoring**: a tab rea
 
 Node charts need the `Sys.Audit` privilege (the `PVEAuditor` role, for example), machine charts `VM.Audit`.
 
-Each action starts a Proxmox task: Portunia follows it and reports its result. Consoles use the Proxmox VNC console, relayed by Portunia: the **VNC** extension must be enabled. Rights are those of the user or token in Proxmox. To create a machine, clone a template.
+Each action starts a Proxmox task: Portunia follows it and reports its result. Consoles use the Proxmox VNC console, relayed by Portunia: the **VNC** extension must be enabled. Rights are those of the user or token in Proxmox.
+
+<a id="proxmox-creer"></a>
+
+#### Creating a machine or a container (Portunia 0.70)
+
+| Wizard | What you choose |
+| --- | --- |
+| **Virtual machine** | Node, ID (the first free one is suggested), name, system (Linux, Windows 11 / Server 2022-2025, Windows 10 / Server 2016-2019, other), **installation ISO** from the storages ("Download an ISO…" has the node fetch one from a web address), cores, memory, CPU type, disk storage and size, network bridge and VLAN tag, QEMU guest agent, start after creation and with the node. |
+| **Container** | Node, ID, host name, **template** ("Get templates…" opens the Proxmox catalogue: Debian, Ubuntu, Alpine…), root password and/or SSH keys, cores, memory, swap, disk, unprivileged container and nesting (ticked by default), bridge, VLAN, IPv4 by DHCP or fixed with a gateway, IPv6, DNS server. |
+
+For Windows 11, the machine gets UEFI, Secure Boot and a TPM. Also choose the **VirtIO drivers** ISO (`virtio-win.iso`): the disk and network card are then VirtIO, the fastest. Without it, Windows gets a SATA disk and an Intel E1000 card, which its installer recognises out of the box. Creating needs the `VM.Allocate` and `Datastore.AllocateSpace` privileges (roles `PVEVMAdmin` and `PVEDatastoreUser`, for example).
+
+<a id="proxmox-noeud"></a>
+
+#### Managing a node (Portunia 0.70)
+
+| Node menu | Effect |
+| --- | --- |
+| Updates | Proxmox and kernel versions, packages to update; "Refresh the list" (apt update); "Upgrade in a shell" opens the node shell and runs `apt dist-upgrade` there, as Proxmox does, where you answer its questions. Proxmox only allows it for `root@pam`. |
+| Services | State of the Proxmox services (pveproxy, pvedaemon, corosync, sshd, postfix…): start, stop, restart. A confirmation is asked for those whose stop can cut access to the node. |
+| System log | The last 200, 500 or 2000 lines, with a filter. |
+| Network | Interfaces, bridges, addresses, gateway, ports, read-only: a network mistake can cut the node off, so changes stay in the Proxmox web interface. |
+| Disks | Physical disks: type, model, size, usage (LVM, ZFS…), health and SSD wear; "SMART" shows the attributes. |
+| Restart, shut down the node | After typing the node's name. Running machines are shut down first. A node that is shut down is started again on site or through its management card. |
+
+Useful privileges: `Sys.Audit` to read, `Sys.Modify` for services and updates, `Sys.PowerMgmt` to restart or shut down, `Sys.Syslog` for the log (the `Administrator` role on the node, for example).
 
 <a id="verrou"></a>
 
