@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.67.1 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.68.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -321,8 +321,21 @@ Sous chaque serveur, ses nœuds (charge du processeur) puis leurs machines virtu
 | Où | Actions |
 | --- | --- |
 | Machine ou conteneur (clic droit) | Console ; démarrer, éteindre, redémarrer, mettre en pause et reprendre (machines virtuelles), arrêter (coupure, avec confirmation) ; **Instantanés** (prendre, avec la mémoire si la machine tourne, revenir, supprimer) ; **Sauvegardes** (sauvegarder maintenant sur un stockage, mode et compression ; lister, restaurer par-dessus, supprimer) ; **Cloner** (nouveau numéro proposé, nœud cible, copie complète ou liée depuis un modèle) ; **Migrer** vers un autre nœud, à chaud si elle tourne ; **Ressources et réglages** (cœurs, processeurs, mémoire, démarrage avec le nœud, notes, tous les réglages en lecture) ; Tâches ; convertir en modèle ; supprimer (en tapant son numéro). |
-| Nœud (clic droit) | Shell du nœud dans un onglet ; stockages ; tâches. |
-| Serveur (menu « … ») | Actualiser ; tâches du cluster ; stockages (place occupée, contenu : images ISO, modèles, disques, sauvegardes) ; modifier ; copier l'empreinte ; retirer de Portunia. |
+| Nœud (clic droit) | **Supervision** de ce nœud ; shell du nœud dans un onglet ; stockages ; tâches. |
+| Serveur (menu « … ») | **Supervision** ; actualiser ; tâches du cluster ; stockages (place occupée, contenu : images ISO, modèles, disques, sauvegardes) ; modifier ; copier l'empreinte ; retirer de Portunia. |
+
+<a id="proxmox-supervision"></a>
+
+#### Supervision (Portunia 0.68)
+
+Menu « … » du serveur (ou clic droit sur un nœud) › **Supervision** : un onglet relu toutes les 10 secondes tant qu'il est ouvert.
+
+-   **Ensemble** : processeur et mémoire de tous les nœuds, stockage occupé (un stockage partagé compté une fois), machines en marche.
+-   **Chaque nœud** : jauges (processeur, mémoire, disque système) et courbes sur l'heure, le jour, la semaine ou le mois (processeur et attente disque, mémoire et swap, réseau, charge moyenne). Survolez une courbe pour lire ses valeurs à un instant.
+-   **Stockages** : type, contenus, place occupée (orange à 75 %, rouge à 90 %).
+-   **Machines et conteneurs** : processeur, mémoire, disque, débits réseau et disque (mesurés entre deux relevés), durée de marche ; cliquez sur un titre de colonne pour trier, sur une ligne pour ses courbes.
+
+Les courbes des nœuds demandent le droit `Sys.Audit` (rôle `PVEAuditor`, par exemple), celles des machines `VM.Audit`.
 
 Chaque action lance une tâche Proxmox : Portunia la suit et annonce son résultat. Les consoles utilisent la console VNC de Proxmox, relayée par Portunia : l'extension **VNC** doit être activée. Les droits sont ceux de l'utilisateur ou du jeton dans Proxmox. Pour créer une machine, clonez un modèle.
 
