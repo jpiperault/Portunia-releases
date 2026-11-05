@@ -21,7 +21,7 @@ SSH, Bureau à distance (RDP), VNC, Telnet, FTP, port série, shells locaux et c
 
 **Connexions**
 - **SSH** compatible OpenSSH 10 : clé privée (y compris les clés PuTTY `.ppk`), mot de passe ou agent (Pageant / OpenSSH), serveurs de rebond enchaînés, mode compatibilité pour les anciens équipements.
-- **Bureau à distance (RDP)** dans un onglet, avec presse-papiers partagé et écran adapté à la taille de la fenêtre, ou dans le client Windows au choix.
+- **Bureau à distance (RDP)** dans un onglet, avec presse-papiers partagé, copie de fichiers dans les deux sens et écran adapté à la taille de la fenêtre, ou dans le client Windows au choix.
 - **VNC**, **Telnet**, **port série** (ports COM détectés automatiquement) et **consoles web**.
 - **SFTP et FTP / FTPS** en deux volets (ce PC et le serveur), à installer depuis le catalogue d'extensions : FTPS implicite, mode actif, file de transferts.
 - **Shells locaux** : PowerShell, Invite de commandes, distributions WSL, Git Bash.
@@ -34,6 +34,7 @@ SSH, Bureau à distance (RDP), VNC, Telnet, FTP, port série, shells locaux et c
 - **Commandes enregistrées** (Ctrl+Maj+P), **tunnels SSH** (port local, proxy SOCKS, port distant), **X11**, **reconnexion automatique**.
 - **Notes par session** en Markdown, **identifiants partagés** entre sessions, **outils réseau** (ping, traceroute, test de ports, DNS, Wake-on-LAN).
 - **Supervision** : pastille verte ou rouge et latence pour chaque serveur.
+- **Proxmox VE** (Pro) : machines virtuelles et conteneurs dans la barre latérale, consoles, instantanés, sauvegardes, clonage, migration, et courbes de supervision par nœud et par machine.
 - **Dossiers et sous-dossiers**, **couleurs par dossier** (repérez la production d'un coup d'œil), thème clair ou sombre, 9 palettes de terminal, en français ou en anglais (selon Windows, ou à votre choix).
 - **Import** depuis `~/.ssh/config`, PuTTY et mRemoteNG.
 
@@ -52,14 +53,14 @@ Portunia se connecte à [Portunia Gate](https://github.com/jpiperault/Portunia-G
 
 Portunia est **gratuit pour un usage personnel**, avec tous les protocoles.
 
-- **Pro** : enregistrement des sessions, tableau de bord des serveurs, commande sur plusieurs serveurs, conteneurs Docker et Kubernetes, alertes de supervision, stockage S3, comparaison et synchronisation de dossiers.
+- **Pro** : enregistrement des sessions, tableau de bord des serveurs, commande sur plusieurs serveurs, conteneurs Docker et Kubernetes, alertes de supervision, stockage S3, comparaison et synchronisation de dossiers, Proxmox VE.
 - **Équipes** : administration et audit de Portunia Gate depuis Portunia (relecture des sessions, journal, portail web).
 
 Pendant l'avant-première, toutes les fonctions sont débloquées.
 
 ## Documentation
 
-- **[Guide d'utilisation](docs/guide-utilisation.md)** : installation, sessions, tous les protocoles, fichiers, tunnels, connexion par une Gate, portail web, assistance à distance, raccourcis, dépannage.
+- **[Guide d'utilisation](docs/guide-utilisation.md)** (aussi [en anglais](docs/user-guide.md)) : installation, sessions, tous les protocoles, fichiers, tunnels, connexion par une Gate, portail web, assistance à distance, raccourcis, dépannage.
 - **[Guide d'administration](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md)** : installer et exploiter Portunia Gate.
 
 ## Signaler un problème

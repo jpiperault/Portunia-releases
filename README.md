@@ -21,7 +21,7 @@ SSH, Remote Desktop (RDP), VNC, Telnet, FTP, serial port, local shells and web c
 
 **Connections**
 - **SSH** compatible with OpenSSH 10: private key (PuTTY `.ppk` keys included), password or agent (Pageant / OpenSSH), chained jump hosts, compatibility mode for older equipment.
-- **Remote Desktop (RDP)** in a tab, with shared clipboard and a screen fitted to the window, or in the Windows client if you prefer.
+- **Remote Desktop (RDP)** in a tab, with shared clipboard, file copy in both directions and a screen fitted to the window, or in the Windows client if you prefer.
 - **VNC**, **Telnet**, **serial port** (COM ports detected automatically) and **web consoles**.
 - **SFTP and FTP / FTPS** in two panes (this PC and the server), installed from the extensions catalogue: implicit FTPS, active mode, transfer queue.
 - **Local shells**: PowerShell, Command Prompt, WSL distributions, Git Bash.
@@ -34,6 +34,7 @@ SSH, Remote Desktop (RDP), VNC, Telnet, FTP, serial port, local shells and web c
 - **Saved commands** (Ctrl+Shift+P), **SSH tunnels** (local port, SOCKS proxy, remote port), **X11**, **automatic reconnection**.
 - **Notes per session** in Markdown, **shared credentials** across sessions, **network tools** (ping, traceroute, port test, DNS, Wake-on-LAN).
 - **Monitoring**: green or red dot and latency for each server.
+- **Proxmox VE** (Pro): virtual machines and containers in the sidebar, consoles, snapshots, backups, clone, migrate, and monitoring charts per node and machine.
 - **Folders and sub-folders**, **colours per folder** (spot production at a glance), light or dark theme, 9 terminal palettes, in English or French (following Windows, or your choice).
 - **Import** from `~/.ssh/config`, PuTTY and mRemoteNG.
 
@@ -52,15 +53,15 @@ Portunia connects to [Portunia Gate](https://github.com/jpiperault/Portunia-Gate
 
 Portunia is **free for personal use**, with every protocol.
 
-- **Pro**: session recording, server dashboard, command on several servers, Docker and Kubernetes containers, monitoring alerts, S3 storage, compare and synchronise folders.
+- **Pro**: session recording, server dashboard, command on several servers, Docker and Kubernetes containers, monitoring alerts, S3 storage, compare and synchronise folders, Proxmox VE.
 - **Teams**: administration and audit of Portunia Gate from Portunia (session replay, audit log, web portal).
 
 During the preview, every feature is unlocked.
 
 ## Documentation
 
-- **[User guide](docs/guide-utilisation.md)** (French): install, sessions, every protocol, files, tunnels, connecting through a Gate, web portal, remote assistance, shortcuts, troubleshooting.
-- **[Administration guide](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md)** (French): installing and running Portunia Gate.
+- **[User guide](docs/user-guide.md)** (also [in French](docs/guide-utilisation.md)): install, sessions, every protocol, files, tunnels, connecting through a Gate, web portal, remote assistance, shortcuts, troubleshooting.
+- **[Administration guide](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md)** (also in French): installing and running Portunia Gate.
 
 ## Reporting a problem
 

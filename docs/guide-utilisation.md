@@ -2,7 +2,7 @@
 
 *Portunia 0.69.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
 
-> Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
+> Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
 Se connecter à ses serveurs avec Portunia, transférer des fichiers, travailler par une Gate, utiliser le portail web et donner ou recevoir de l'aide à distance. Aucune connaissance de l'administration n'est nécessaire.
 
