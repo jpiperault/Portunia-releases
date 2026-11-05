@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.65.0 · Portunia Gate 0.29.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.66.0 · Portunia Gate 0.29.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -306,6 +306,23 @@ La **supervision** teste si vos serveurs répondent (toutes les 30 secondes, min
 | Commande sur plusieurs serveurs | La même commande sur des sessions choisies ou un dossier, 8 serveurs à la fois. Résultats côte à côte, avec filtre des échecs. |
 | Conteneurs | Docker, Podman et pods Kubernetes du serveur : shell, journaux, démarrer, arrêter, redémarrer. |
 | Enregistrement | Le bouton **Enregistrer** de l'onglet garde la session terminal. Palette, puis « Enregistrements » pour la revoir, avec vitesse et navigation. |
+| Proxmox VE | Les serveurs Proxmox dans leur propre section (voir ci-dessous). |
+
+<a id="proxmox"></a>
+
+### Proxmox VE (Portunia 0.66)
+
+Activez l'extension **Proxmox VE** (Extensions) : une icône **Proxmox** apparaît dans la barre de gauche. **+** ajoute un serveur : son adresse (port 8006 par défaut), puis l'**empreinte du certificat** à comparer avec celle de Proxmox (nœud › Système › Certificats), l'utilisateur (`root@pam`, `admin@pve`…) et un **jeton d'API** (conseillé : Datacenter › Permissions › API Tokens, sans « Privilege Separation » pour garder les droits de l'utilisateur) ou un mot de passe. Le secret reste dans le Gestionnaire d'identifiants de Windows. Un compte à double authentification demande un jeton. Plusieurs serveurs ou clusters peuvent être ajoutés.
+
+Sous chaque serveur, ses nœuds (charge du processeur) puis leurs machines virtuelles et conteneurs (point vert : en marche). L'état se met à jour toutes les 30 secondes ; le filtre des sessions s'applique aussi (numéro, nom, nœud, étiquette). Un clic ouvre la **console** d'une machine en marche dans un onglet ; le clic droit donne le reste.
+
+| Où | Actions |
+| --- | --- |
+| Machine ou conteneur (clic droit) | Console ; démarrer, éteindre, redémarrer, mettre en pause et reprendre (machines virtuelles), arrêter (coupure, avec confirmation) ; **Instantanés** (prendre, avec la mémoire si la machine tourne, revenir, supprimer) ; **Sauvegardes** (sauvegarder maintenant sur un stockage, mode et compression ; lister, restaurer par-dessus, supprimer) ; **Cloner** (nouveau numéro proposé, nœud cible, copie complète ou liée depuis un modèle) ; **Migrer** vers un autre nœud, à chaud si elle tourne ; **Ressources et réglages** (cœurs, processeurs, mémoire, démarrage avec le nœud, notes, tous les réglages en lecture) ; Tâches ; convertir en modèle ; supprimer (en tapant son numéro). |
+| Nœud (clic droit) | Shell du nœud dans un onglet ; stockages ; tâches. |
+| Serveur (menu « … ») | Actualiser ; tâches du cluster ; stockages (place occupée, contenu : images ISO, modèles, disques, sauvegardes) ; modifier ; copier l'empreinte ; retirer de Portunia. |
+
+Chaque action lance une tâche Proxmox : Portunia la suit et annonce son résultat. Les consoles utilisent la console VNC de Proxmox, relayée par Portunia : l'extension **VNC** doit être activée. Les droits sont ceux de l'utilisateur ou du jeton dans Proxmox. Pour créer une machine, clonez un modèle.
 
 <a id="verrou"></a>
 
