@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.70.1 · Portunia Gate 0.30.1 · Updated: 5 November 2026*
+*Portunia 0.71.0 · Portunia Gate 0.31.0 · Updated: 5 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -451,6 +451,18 @@ Portunia may point out that some of your personal sessions go directly to server
 ### Windows servers
 
 They carry an RDP badge and need the Remote Desktop extension. Your Windows credentials are asked at each opening, except for servers in **vault** mode (Gate 0.29): the Gate then opens the Windows session itself, without you seeing the password. In the web portal, Windows servers in jump mode open too: the Gate relays them, without recording them.
+
+<a id="rdp-natif"></a>
+
+### Windows servers in mstsc or Windows App
+
+If the administrator has opened the Gate's native RDP entry (Gate 0.31, Portunia 0.71), right-click a Windows server › **Open in the Windows client (mstsc)** (on Mac: **Open in Windows App**). Portunia prepares a single-use .rdp file, valid for a few minutes, and opens it: you get the Windows client (several screens, printers, shortcuts) while the Gate keeps its checks and its recording.
+
+-   **Vault**: nothing to type.
+-   **Recorded**: Portunia asks for your Windows account; the Gate uses it once to open the session and does not keep it. Leave it empty if the server shows its own sign-in screen.
+-   **Jump**: mstsc asks for your Windows credentials, as for a direct connection.
+
+mstsc may warn once about the Gate's certificate: your administrator gives you the fingerprint to compare. If the connection drops, open it again from Portunia (a file is used only once).
 
 ### Web interfaces
 

@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.70.1 · Portunia Gate 0.30.1 · Mise à jour : 5 novembre 2026*
+*Portunia 0.71.0 · Portunia Gate 0.31.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -451,6 +451,18 @@ Portunia peut signaler que certaines de vos sessions personnelles visent directe
 ### Serveurs Windows
 
 Ils portent un badge RDP et demandent l'extension Bureau à distance. Vos identifiants Windows sont demandés à chaque ouverture, sauf pour les serveurs en mode **coffre** (Gate 0.29) : la Gate ouvre alors la session Windows elle-même, sans que vous voyiez le mot de passe. Dans le portail web, les serveurs Windows en mode rebond s'ouvrent aussi : la Gate les relaie, sans les enregistrer.
+
+<a id="rdp-natif"></a>
+
+### Serveurs Windows dans mstsc ou Windows App
+
+Si l'administrateur a ouvert l'entrée RDP native de la Gate (Gate 0.31, Portunia 0.71), clic droit sur un serveur Windows › **Ouvrir dans le client Windows (mstsc)** (sur Mac : **Ouvrir dans Windows App**). Portunia prépare un fichier .rdp à usage unique, valable quelques minutes, et l'ouvre : vous profitez du client de Windows (plusieurs écrans, imprimantes, raccourcis), la Gate garde ses contrôles et son enregistrement.
+
+-   **Coffre** : rien à taper.
+-   **Enregistré** : Portunia demande votre compte Windows ; la Gate s'en sert une fois pour ouvrir la session et ne le garde pas. Laissez-le vide si le serveur affiche son propre écran de connexion.
+-   **Rebond** : mstsc demande vos identifiants Windows, comme une connexion directe.
+
+mstsc peut avertir une fois sur le certificat de la Gate : l'empreinte à comparer vous est donnée par l'administrateur. Si la connexion se coupe, rouvrez-la depuis Portunia (un fichier ne sert qu'une fois).
 
 ### Interfaces web
 
