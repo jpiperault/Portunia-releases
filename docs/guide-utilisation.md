@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.68.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.69.0 · Portunia Gate 0.30.0 · Mise à jour : 5 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md).
 
@@ -234,10 +234,14 @@ Les ports de votre PC n'écoutent que sur `127.0.0.1` : les autres machines du r
 | Bouton | Effet |
 | --- | --- |
 | Ctrl+Alt+Suppr | Envoie la combinaison à la machine distante. Tapée au clavier, elle resterait à votre propre Windows. |
-| Presse-papiers | Copie le presse-papiers de Windows vers l'écran distant. |
+| Presse-papiers | VNC : copie le presse-papiers de Windows vers l'écran distant. En Bureau à distance, le texte copié passe tout seul dans les deux sens. |
+| Envoyer des fichiers 0.69 | Bureau à distance : choisissez des fichiers de ce PC (ou déposez-les sur l'écran), puis collez-les dans l'Explorateur du serveur avec Ctrl+V. Un message indique quand chaque fichier a été lu. |
+| Récupérer les fichiers 0.69 | Apparaît quand des fichiers sont copiés (Ctrl+C) dans l'Explorateur du serveur : choisissez un dossier de ce PC, ils y sont enregistrés (un nom déjà pris devient « nom (2) »). |
 | Ajuster à la fenêtre / Taille réelle | Adapte l'image à l'onglet, ou l'affiche à sa taille avec défilement. |
 
 En Bureau à distance dans un onglet, le bureau distant s'adapte à la taille de l'onglet. Choisissez « Client Windows (mstsc) » pour le plein écran, tous vos écrans, ou si une fonction manque dans l'onglet.
+
+Par une Gate, les boutons de fichiers n'apparaissent que si votre administrateur permet la copie de fichiers sur ce serveur (Gate 0.28 et suivantes) ; chaque fichier copié y est noté avec son nom, sa taille et son empreinte SHA-256. Le texte copié-collé reste possible dans tous les cas.
 
 ### Options du Bureau à distance (Portunia 0.65)
 
