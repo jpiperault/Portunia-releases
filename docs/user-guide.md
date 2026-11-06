@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.71.0 · Portunia Gate 0.31.0 · Updated: 5 November 2026*
+*Portunia 0.71.0 · Portunia Gate 0.34.0 · Updated: 5 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -463,6 +463,8 @@ If the administrator has opened the Gate's native RDP entry (Gate 0.31, Portunia
 -   **Jump**: mstsc asks for your Windows credentials, as for a direct connection.
 
 mstsc may warn once about the Gate's certificate: your administrator gives you the fingerprint to compare. If the connection drops, open it again from Portunia (a file is used only once).
+
+**Without Portunia** (Gate 0.34): in the web portal, open *Connect with mstsc or Windows App* and create your **RDP password** (shown only once). Then, in any Remote Desktop client: computer = the address shown, user = `login%server` (add `%` and the 6-digit code of your authentication app if the portal asks for it: `julien%srv-ad-01%123456`), password = your RDP password. The portal also gives a ready-made .rdp shortcut per server.
 
 ### Web interfaces
 
