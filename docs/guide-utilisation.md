@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.71.0 · Portunia Gate 0.34.0 · Mise à jour : 5 novembre 2026*
+*Portunia 0.73.1 · Portunia Gate 0.34.1 · Mise à jour : 6 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -468,7 +468,7 @@ mstsc peut avertir une fois sur le certificat de la Gate : l'empreinte à compar
 
 ### Interfaces web
 
-Les consoles d'administration (vCenter, iDRAC, pare-feu…) portent un badge WEB (Gate 0.30, Portunia 0.67, extension Interface web). Un clic ouvre l'application dans une fenêtre dédiée, par la Gate ; vous y tapez vos identifiants comme d'habitude. La Gate note les pages que vous ouvrez. Dans le portail web, elle s'ouvre dans un nouvel onglet ; une seule interface web à la fois par navigateur.
+Les consoles d'administration (vCenter, iDRAC, pare-feu…) portent un badge WEB (Gate 0.30, Portunia 0.67, extension Interface web). Un clic ouvre l'application dans une fenêtre dédiée, par la Gate ; vous y tapez vos identifiants comme d'habitude, sauf si le serveur est en **coffre** (Gate 0.32) : la Gate remplit alors le formulaire de connexion (ou l'authentification du navigateur) avec le compte qu'elle garde, sans que vous voyiez le mot de passe. La Gate note les pages que vous ouvrez. Dans le portail web, elle s'ouvre dans un nouvel onglet ; une seule interface web à la fois par navigateur.
 
 > [!WARNING]
 > **Téléphone perdu ou changé** — Sans le téléphone, vous ne pouvez plus générer de code. Demandez à votre administrateur de réinitialiser votre code ; vous referez l'étape du QR code à la prochaine connexion.

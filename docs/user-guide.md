@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.71.0 · Portunia Gate 0.34.0 · Updated: 5 November 2026*
+*Portunia 0.73.1 · Portunia Gate 0.34.1 · Updated: 6 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -468,7 +468,7 @@ mstsc may warn once about the Gate's certificate: your administrator gives you t
 
 ### Web interfaces
 
-Administration consoles (vCenter, iDRAC, firewalls…) carry a WEB badge (Gate 0.30, Portunia 0.67, Web interface extension). A click opens the application in a dedicated window, through the Gate; you type your credentials there as usual. The Gate logs the pages you open. In the web portal, it opens in a new tab; only one web interface at a time per browser.
+Administration consoles (vCenter, iDRAC, firewalls…) carry a WEB badge (Gate 0.30, Portunia 0.67, Web interface extension). A click opens the application in a dedicated window, through the Gate; you type your credentials there as usual, unless the server is in **Vault** mode (Gate 0.32): the Gate then fills in the sign-in form (or the browser authentication) with the account it keeps, without showing you the password. The Gate logs the pages you open. In the web portal, it opens in a new tab; only one web interface at a time per browser.
 
 > [!WARNING]
 > **Phone lost or changed** — Without the phone, you can no longer generate a code. Ask your administrator to reset your code; you will do the QR code step again at your next sign-in.
