@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.77.0 · Portunia Gate 0.38.0 · Mise à jour : 6 novembre 2026*
+*Portunia 0.79.0 · Portunia Gate 0.41.0 · Mise à jour : 6 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -466,6 +466,18 @@ Si l'administrateur a ouvert l'entrée RDP native de la Gate (Gate 0.31, Portuni
 mstsc peut avertir une fois sur le certificat de la Gate : l'empreinte à comparer vous est donnée par l'administrateur. Si la connexion se coupe, rouvrez-la depuis Portunia (un fichier ne sert qu'une fois).
 
 **Sans Portunia** (Gate 0.34) : dans le portail web, ouvrez *Se connecter avec mstsc ou Windows App* et créez votre **mot de passe RDP** (affiché une seule fois). Ensuite, dans n'importe quel client Bureau à distance : ordinateur = l'adresse affichée, utilisateur = `compte%serveur` (ajoutez `%` et le code à 6 chiffres de votre application d'authentification si le portail le demande : `julien%srv-ad-01%123456`), mot de passe = votre mot de passe RDP. Le portail donne aussi un raccourci .rdp prêt à l'emploi par serveur.
+
+<a id="exterieur"></a>
+
+### Depuis l'extérieur, par Cloudflare
+
+Si l'administrateur a publié la Gate par Cloudflare (Gate 0.41, Portunia 0.79), Portunia fonctionne aussi hors du réseau de l'entreprise, sans VPN : quand la Gate ne répond pas directement, Portunia télécharge `cloudflared` (le programme officiel de Cloudflare, empreinte vérifiée) et passe par lui, sans rien vous demander. Connexion, serveurs SSH, Bureau à distance, interfaces web et mstsc fonctionnent comme au bureau ; Portunia vérifie toujours l'empreinte de la Gate.
+
+-   **Gate déjà ajoutée au bureau** : rien à faire, Portunia choisit le passage tout seul.
+-   **Première fois depuis l'extérieur** : Ajouter une Gate, puis tapez le **nom d'hôte de l'API** que vous donne l'administrateur (ex. `gate-api.acme.fr`). La fenêtre indique « par Cloudflare » ; comparez l'empreinte comme d'habitude.
+-   Si l'entreprise protège ces noms par **Cloudflare Access**, une page de connexion Cloudflare s'ouvre dans le navigateur la première fois.
+
+**mstsc sans Portunia** : installez `cloudflared`, lancez `cloudflared access rdp --hostname gate-rdp.acme.fr --url localhost:13389`, puis ouvrez mstsc vers `localhost:13389` avec votre `compte%serveur` et votre mot de passe RDP.
 
 ### Interfaces web
 
