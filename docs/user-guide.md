@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.73.1 · Portunia Gate 0.34.1 · Updated: 6 November 2026*
+*Portunia 0.77.0 · Portunia Gate 0.38.0 · Updated: 6 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -443,6 +443,7 @@ Your servers appear in folders under the Gate's name. You only see the ones you 
 -   When the time is up, the Gate shows "session expired". Click it to sign in again. The servers stay greyed out meanwhile.
 -   If the administrator allows it, tick "Remember my password on this PC". The code is still asked.
 -   The Gate's "More actions" button also offers "My sessions" (if the Gate lets you replay yours), "Sign out" and "Remove this Gate".
+-   **Server on approval** (Gate 0.38): "More actions" › **Approvals**, give a reason (and a ticket if you have one) then **Ask**. A notification tells you the answer; the server then shows in the list for the duration granted. Ten minutes before the end, a message shows in the terminal. The web portal offers the same request under "Servers on approval".
 
 ### Sessions that bypass the Gate
 

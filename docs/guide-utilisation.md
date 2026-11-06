@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.73.1 · Portunia Gate 0.34.1 · Mise à jour : 6 novembre 2026*
+*Portunia 0.77.0 · Portunia Gate 0.38.0 · Mise à jour : 6 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -443,6 +443,7 @@ Vos serveurs apparaissent par dossiers sous le nom de la Gate. Vous ne voyez que
 -   Une fois la durée écoulée, la Gate indique « session expirée ». Cliquez dessus pour vous reconnecter. Les serveurs restent affichés en gris en attendant.
 -   Si l'administrateur l'autorise, cochez « Mémoriser mon mot de passe sur ce PC ». Le code sera toujours demandé.
 -   Le bouton « Plus d'actions » de la Gate propose aussi « Mes sessions » (si la Gate permet de relire les vôtres), « Se déconnecter » et « Retirer cette Gate ».
+-   **Serveur sur approbation** (Gate 0.38) : « Plus d'actions » › **Approbations**, donnez un motif (et un ticket si vous en avez un) puis **Demander**. Une notification vous prévient de la réponse ; le serveur apparaît alors dans la liste pour la durée accordée. Dix minutes avant la fin, un message s'affiche dans le terminal. Le portail web propose la même demande sous « Serveurs sur approbation ».
 
 ### Sessions qui contournent la Gate
 
