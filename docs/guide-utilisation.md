@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.79.0 · Portunia Gate 0.41.0 · Mise à jour : 6 novembre 2026*
+*Portunia 0.81.0 · Portunia Gate 0.43.0 · Mise à jour : 7 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -548,6 +548,16 @@ Il vous faut Portunia, les extensions Portunia Gate et Assistance à distance ac
 
 Elle décide si vous voyez seulement l'écran ou si vous pouvez aussi utiliser la souris et le clavier. Elle peut tout arrêter à tout moment. La liaison est chiffrée de bout en bout à partir du code.
 
+Le bandeau en haut de l'onglet (Portunia 0.81 et Portunia Assistance 0.81) montre ce que la personne vous a accordé et le temps d'aller-retour jusqu'à son PC :
+
+| Dans le bandeau | Ce que cela veut dire |
+| --- | --- |
+| **Vue seule** · **Demander le contrôle** | Vous voyez l'écran sans agir. Le bouton envoie une demande ; la personne accepte ou refuse dans sa barre. |
+| **Vous voyez et contrôlez l'écran** | Souris et clavier sont à vous. La personne peut reprendre la main à tout moment : vous repassez en vue seule. |
+| **Pause** | La personne tape un mot de passe ou lit un message privé : l'image est figée et rien de ce que vous faites n'est pris en compte. |
+| **Réseau coupé : reconnexion…** | Avec une Gate 0.43 ou suivante, la session reprend toute seule si le réseau revient dans les 2 minutes. |
+| **Discussion** | Messages écrits dans les deux sens, utiles quand le téléphone est raccroché. Ils ne sont gardés que pendant l'assistance. |
+
 | Message | Que faire |
 | --- | --- |
 | « Connectez-vous d'abord à une Gate » | Reconnectez-vous dans la section Gates. |
@@ -565,9 +575,16 @@ Une personne de confiance va vous aider sur votre ordinateur, sous Windows 10 ou
 2.  Ouvrez le fichier téléchargé. Si Windows affiche un avertissement bleu, cliquez sur « Informations complémentaires » puis « Exécuter quand même ».
 3.  Un code à 9 chiffres s'affiche. Lisez-le à la personne qui vous aide.
 4.  Son nom apparaît. Vérifiez que c'est bien elle, puis acceptez.
-5.  Cochez « Lui laisser utiliser la souris et le clavier » si elle doit agir pour vous. Sinon, elle voit seulement l'écran.
+5.  Choisissez **Voir et contrôler** si elle doit agir pour vous, ou **Voir seulement**. Sans réponse en une minute, la demande est refusée.
 
-Pendant l'assistance, un cadre entoure votre écran et un bandeau indique qui le voit. **Pour arrêter, cliquez sur « Arrêter » ou appuyez trois fois sur Échap.** Fermé, le programme ne laisse aucun accès.
+Pendant l'assistance, un cadre entoure votre écran et une barre reste en haut (vous pouvez la déplacer). Elle n'apparaît pas dans l'image envoyée. **Pour arrêter, cliquez sur « Arrêter » ou appuyez trois fois sur Échap.** Fermé, le programme ne laisse aucun accès.
+
+| Bouton de la barre | Effet |
+| --- | --- |
+| **Pause** | Fige l'image chez la personne qui vous aide et bloque sa souris et son clavier, le temps de taper un mot de passe. Cliquez à nouveau pour reprendre. |
+| **Main** | Reprend la souris et le clavier : elle voit seulement. Si elle redemande le contrôle, la barre vous demande d'accepter ou de refuser. |
+| **Discussion** | Messages écrits. Une pastille rouge signale un nouveau message. |
+| **Arrêter** | Termine l'assistance. Un résumé s'affiche : durée, contrôle donné ou non, messages. |
 
 > [!CAUTION]
 > **Méfiez-vous des appels inattendus** — Ne lisez ce code qu'à une personne que vous connaissez ou que vous avez vous-même appelée. Personne de sérieux ne vous appellera à l'improviste pour vous le demander. Si vous avez un doute, raccrochez.

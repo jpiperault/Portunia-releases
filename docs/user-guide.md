@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.79.0 · Portunia Gate 0.41.0 · Updated: 6 November 2026*
+*Portunia 0.81.0 · Portunia Gate 0.43.0 · Updated: 7 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -548,6 +548,16 @@ You need Portunia, the Portunia Gate and Remote assistance extensions enabled, a
 
 They decide whether you only see the screen or can also use the mouse and keyboard. They can stop everything at any time. The link is encrypted end to end from the code.
 
+The strip at the top of the tab (Portunia 0.81 and Portunia Assistance 0.81) shows what the person granted you and the round trip to their PC:
+
+| In the strip | What it means |
+| --- | --- |
+| **View only** · **Ask for control** | You see the screen without acting. The button sends a request; the person accepts or declines in their bar. |
+| **You see and control the screen** | The mouse and keyboard are yours. The person can take back control at any time: you go back to view only. |
+| **Pause** | The person is typing a password or reading a private message: the image is frozen and nothing you do is taken into account. |
+| **Network cut: reconnecting…** | With a Gate 0.43 or later, the session resumes by itself if the network comes back within 2 minutes. |
+| **Chat** | Written messages both ways, useful once the phone is hung up. They are kept only during the assistance. |
+
 | Message | What to do |
 | --- | --- |
 | "Sign in to a Gate first" | Sign in again in the Gates section. |
@@ -565,9 +575,16 @@ A person you trust is going to help you on your computer, running Windows 10 or 
 2.  Open the downloaded file. If Windows shows a blue warning, click "More info", then "Run anyway".
 3.  A 9-digit code appears. Read it to the person helping you.
 4.  Their name appears. Check that it really is them, then accept.
-5.  Tick the option that lets them use the mouse and keyboard if they need to act for you. Otherwise, they only see the screen.
+5.  Choose **View and control** if they must act for you, or **View only**. Without an answer within a minute, the request is declined.
 
-During the assistance, a frame surrounds your screen and a banner shows who is watching it. **To stop, click "Stop" or press Esc three times.** Once closed, the program leaves no access behind.
+During the assistance, a frame surrounds your screen and a bar stays at the top (you can move it). It does not appear in the image sent. **To stop, click "Stop" or press Esc three times.** Once closed, the program leaves no access behind.
+
+| Bar button | Effect |
+| --- | --- |
+| **Pause** | Freezes the image on the helper's side and blocks their mouse and keyboard, while you type a password. Click again to resume. |
+| **Hand** | Takes back the mouse and keyboard: they only see. If they ask for control again, the bar asks you to allow or decline. |
+| **Chat** | Written messages. A red dot shows a new message. |
+| **Stop** | Ends the assistance. A summary shows: duration, control given or not, messages. |
 
 > [!CAUTION]
 > **Beware of unexpected calls** — Only read this code to someone you know or whom you called yourself. No legitimate person will call you out of the blue to ask for it. If in doubt, hang up.
