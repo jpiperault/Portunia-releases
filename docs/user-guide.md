@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.82.1 · Portunia Gate 0.44.1 · Updated: 7 November 2026*
+*Portunia 0.83.0 · Portunia Gate 0.44.1 · Updated: 7 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -365,11 +365,38 @@ For Windows 11, the machine gets UEFI, Secure Boot and a TPM. Also choose the **
 | Updates | Proxmox and kernel versions, packages to update; "Refresh the list" (apt update); "Upgrade in a shell" opens the node shell and runs `apt dist-upgrade` there, as Proxmox does, where you answer its questions. Proxmox only allows it for `root@pam`. |
 | Services | State of the Proxmox services (pveproxy, pvedaemon, corosync, sshd, postfix…): start, stop, restart. A confirmation is asked for those whose stop can cut access to the node. |
 | System log | The last 200, 500 or 2000 lines, with a filter. |
-| Network | Interfaces, bridges, addresses, gateway, ports, read-only: a network mistake can cut the node off, so changes stay in the Proxmox web interface. |
+| Network | Interfaces, bridges, addresses, gateway, ports. Since 0.83: edit an interface, add a bridge, a VLAN or a bond, delete one. Proxmox keeps the changes aside: they show as « pending » until **Apply the configuration** (after typing the node's name) or **Cancel the pending changes**. A mistake on the interface that carries the node's address can cut it off: keep a console at hand. |
+| Node terminal | Portunia 0.83: the node's shell in a real terminal tab (copy and paste, search), without the VNC extension. « Node shell (VNC) » is still there. Updates run there too. |
+| Firewall, Ceph | The node's firewall rules; Ceph status (health, monitors, OSDs, pools, space), read-only. |
+| Send an ISO or a template… | Sends an ISO image or a container template from this PC to a storage of the node, with progress. |
 | Disks | Physical disks: type, model, size, usage (LVM, ZFS…), health and SSD wear; "SMART" shows the attributes. |
 | Restart, shut down the node | After typing the node's name. Running machines are shut down first. A node that is shut down is started again on site or through its management card. |
 
 Useful privileges: `Sys.Audit` to read, `Sys.Modify` for services and updates, `Sys.PowerMgmt` to restart or shut down, `Sys.Syslog` for the log (the `Administrator` role on the node, for example).
+
+<a id="proxmox-machines"></a>
+
+#### Machines: terminal, connection, hardware (Portunia 0.83)
+
+| Machine menu | Effect |
+| --- | --- |
+| Terminal (container) | The container in a real terminal tab (Proxmox termproxy); it is also what a click on a running container opens. « Console (VNC) » stays in the menu. |
+| Text console (serial port) | For a VM with a serial port (Hardware › Add › Serial port in Proxmox) and a console on it in the system. |
+| Connect with SSH or Remote Desktop… | The machine's addresses, given by the QEMU guest agent (VM) or by the container; SSH, Remote Desktop or « Save as a session ». Portunia connects to the machine directly. Without the agent: install `qemu-guest-agent` (Linux) or the VirtIO tools (Windows) and tick the « QEMU Guest Agent » option. |
+| Hardware | Disks: grow, add, move to another storage; network cards: model, bridge, VLAN, firewall (the MAC address is kept); CD drive: change the ISO image; boot order; CPU type and QEMU agent. Container: root volume and mount points, network cards with address and gateway. |
+| Cloud-init | User, password, SSH keys, address (DHCP or fixed), DNS, update at first boot; adds the cloud-init drive if missing. Applied at the next boot. |
+| Firewall | The machine's rules (direction, action, service or protocol and port, source); they apply to the cards marked « firewall ». |
+| Tasks | A click on a task opens its log, followed live; a running task can be stopped. When a Portunia action fails, its log opens by itself. |
+
+<a id="proxmox-datacenter"></a>
+
+#### Datacenter (Portunia 0.83)
+
+| Server menu | Effect |
+| --- | --- |
+| Users and permissions | Users (add, enable, password, delete), API tokens (the secret is shown only once), groups, permissions (who, path, role). `root@pam` can be neither disabled nor deleted here. |
+| Datacenter firewall | Main switch (with a warning) and shared rules. |
+| Storage | « Add a storage… »: folder, NFS, SMB/CIFS or Proxmox Backup Server; « Remove » takes a storage out of the configuration, its data stays where it is. |
 
 <a id="verrou"></a>
 

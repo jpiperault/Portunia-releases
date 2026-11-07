@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.82.1 · Portunia Gate 0.44.1 · Mise à jour : 7 novembre 2026*
+*Portunia 0.83.0 · Portunia Gate 0.44.1 · Mise à jour : 7 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -365,11 +365,38 @@ Pour Windows 11, la machine reçoit l'UEFI, le Secure Boot et un TPM. Choisissez
 | Mises à jour | Version de Proxmox et du noyau, paquets à mettre à jour ; « Rafraîchir la liste » (apt update) ; « Mettre à jour dans un shell » ouvre le shell du nœud et y lance `apt dist-upgrade`, comme Proxmox, où l'on répond à ses questions. Proxmox ne le permet qu'à `root@pam`. |
 | Services | État des services de Proxmox (pveproxy, pvedaemon, corosync, sshd, postfix…) : démarrer, arrêter, redémarrer. Une confirmation est demandée pour ceux dont l'arrêt peut couper l'accès au nœud. |
 | Journal système | Les 200, 500 ou 2000 dernières lignes, avec un filtre. |
-| Réseau | Interfaces, ponts, adresses, passerelle, ports, en lecture seule : une erreur de réseau peut couper le nœud, la modification reste dans l'interface web de Proxmox. |
+| Réseau | Interfaces, ponts, adresses, passerelle, ports. Depuis la 0.83 : modifier une interface, ajouter un pont, un VLAN ou un agrégat, en supprimer. Proxmox garde les changements à part : ils s'affichent « en attente » jusqu'à **Appliquer la configuration** (après avoir tapé le nom du nœud) ou **Annuler les changements**. Une erreur sur l'interface qui porte l'adresse du nœud peut le couper : gardez une console sous la main. |
+| Terminal du nœud | Portunia 0.83 : le shell du nœud dans un vrai onglet terminal (copier-coller, recherche), sans l'extension VNC. « Shell du nœud (VNC) » reste là. Les mises à jour s'y lancent aussi. |
+| Pare-feu, Ceph | Règles du pare-feu du nœud ; état de Ceph (santé, moniteurs, OSD, pools, place), en lecture. |
+| Envoyer une ISO ou un modèle… | Envoie une image ISO ou un modèle de conteneur de ce PC vers un stockage du nœud, avec la progression. |
 | Disques | Disques physiques : type, modèle, taille, usage (LVM, ZFS…), santé et usure des SSD ; « SMART » affiche les attributs. |
 | Redémarrer, éteindre le nœud | Après avoir tapé le nom du nœud. Les machines en marche sont d'abord éteintes. Un nœud éteint se rallume sur place ou par sa carte de gestion. |
 
 Droits utiles : `Sys.Audit` pour lire, `Sys.Modify` pour les services et les mises à jour, `Sys.PowerMgmt` pour redémarrer ou éteindre, `Sys.Syslog` pour le journal (rôle `Administrator` sur le nœud, par exemple).
+
+<a id="proxmox-machines"></a>
+
+#### Machines : terminal, connexion, matériel (Portunia 0.83)
+
+| Menu d'une machine | Effet |
+| --- | --- |
+| Terminal (conteneur) | Le conteneur dans un vrai onglet terminal (termproxy de Proxmox) ; c'est aussi ce qui s'ouvre d'un clic sur un conteneur en marche. « Console (VNC) » reste au menu. |
+| Console texte (port série) | Pour une VM qui a un port série (Matériel › Ajouter › Port série dans Proxmox) et une console dessus dans le système. |
+| Se connecter en SSH ou Bureau à distance… | Les adresses de la machine, données par l'agent invité QEMU (VM) ou par le conteneur ; SSH, Bureau à distance ou « Enregistrer comme session ». Portunia se connecte directement à la machine. Sans agent : installez `qemu-guest-agent` (Linux) ou les outils VirtIO (Windows) et cochez l'option « QEMU Guest Agent ». |
+| Matériel | Disques : agrandir, ajouter, déplacer vers un autre stockage ; cartes réseau : modèle, pont, VLAN, pare-feu (l'adresse MAC est gardée) ; lecteur CD : changer d'image ISO ; ordre de démarrage ; type de processeur et agent QEMU. Conteneur : volume racine et points de montage, cartes réseau avec adresse et passerelle. |
+| Cloud-init | Utilisateur, mot de passe, clés SSH, adresse (DHCP ou fixe), DNS, mise à jour au premier démarrage ; ajoute le lecteur cloud-init s'il manque. Appliqué au prochain démarrage. |
+| Pare-feu | Règles de la machine (sens, action, service ou protocole et port, source) ; elles valent pour les cartes marquées « pare-feu ». |
+| Tâches | Un clic sur une tâche ouvre son journal, suivi en direct ; une tâche en cours peut être arrêtée. Quand une action de Portunia échoue, son journal s'ouvre tout seul. |
+
+<a id="proxmox-datacenter"></a>
+
+#### Datacenter (Portunia 0.83)
+
+| Menu du serveur | Effet |
+| --- | --- |
+| Utilisateurs et droits | Utilisateurs (ajouter, activer, mot de passe, supprimer), jetons d'API (le secret n'est montré qu'une fois), groupes, permissions (qui, chemin, rôle). `root@pam` ne peut être ni désactivé ni supprimé ici. |
+| Pare-feu du datacenter | Interrupteur général (avec une mise en garde) et règles communes. |
+| Stockages | « Ajouter un stockage… » : dossier, NFS, SMB/CIFS ou Proxmox Backup Server ; « Retirer » enlève un stockage de la configuration, ses données restent en place. |
 
 <a id="verrou"></a>
 
