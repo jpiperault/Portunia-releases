@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.81.0 · Portunia Gate 0.43.0 · Updated: 7 November 2026*
+*Portunia 0.82.0 · Portunia Gate 0.44.0 · Updated: 7 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -557,6 +557,9 @@ The strip at the top of the tab (Portunia 0.81 and Portunia Assistance 0.81) sho
 | **Pause** | The person is typing a password or reading a private message: the image is frozen and nothing you do is taken into account. |
 | **Network cut: reconnecting…** | With a Gate 0.43 or later, the session resumes by itself if the network comes back within 2 minutes. |
 | **Chat** | Written messages both ways, useful once the phone is hung up. They are kept only during the assistance. |
+| **Send a file** | Portunia 0.82 and later: choose files, or drop files or folders on the screen (a folder is sent as .zip). The person accepts each file on their screen; it lands in their Downloads, in the "Portunia Assistance" folder. Progress and Cancel show in the chat. |
+
+**Files.** What the person sends you (they choose it themselves) arrives in the chat, with **Open** and **Save…** (a program can only be saved). The image always goes before files: control stays smooth during a transfer. After a network cut, the transfer resumes where it was, and each file is checked on arrival (SHA-256): a damaged file is deleted. Free edition: 100 MB at most per file; Pro and Teams: no limit. The Gate notes each file in the audit log (direction, size, outcome) without seeing its name or contents.
 
 | Message | What to do |
 | --- | --- |
@@ -584,7 +587,8 @@ During the assistance, a frame surrounds your screen and a bar stays at the top 
 | **Pause** | Freezes the image on the helper's side and blocks their mouse and keyboard, while you type a password. Click again to resume. |
 | **Hand** | Takes back the mouse and keyboard: they only see. If they ask for control again, the bar asks you to allow or decline. |
 | **Chat** | Written messages. A red dot shows a new message. |
-| **Stop** | Ends the assistance. A summary shows: duration, control given or not, messages. |
+| **Files** | When the person helping you offers a file, the window opens under the bar: **Accept** or **Decline** (declined automatically after a minute; a warning for a program). The file goes to Downloads › Portunia Assistance and is never opened by itself. **Send a file…** opens the Windows file picker: only what you choose is sent. Clicks and keys sent by the person helping you are ignored in these windows: they cannot accept on your behalf. |
+| **Stop** | Ends the assistance. A summary shows: duration, control given or not, files exchanged (with "Open the folder"). |
 
 > [!CAUTION]
 > **Beware of unexpected calls** — Only read this code to someone you know or whom you called yourself. No legitimate person will call you out of the blue to ask for it. If in doubt, hang up.

@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.81.0 · Portunia Gate 0.43.0 · Mise à jour : 7 novembre 2026*
+*Portunia 0.82.0 · Portunia Gate 0.44.0 · Mise à jour : 7 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -557,6 +557,9 @@ Le bandeau en haut de l'onglet (Portunia 0.81 et Portunia Assistance 0.81) montr
 | **Pause** | La personne tape un mot de passe ou lit un message privé : l'image est figée et rien de ce que vous faites n'est pris en compte. |
 | **Réseau coupé : reconnexion…** | Avec une Gate 0.43 ou suivante, la session reprend toute seule si le réseau revient dans les 2 minutes. |
 | **Discussion** | Messages écrits dans les deux sens, utiles quand le téléphone est raccroché. Ils ne sont gardés que pendant l'assistance. |
+| **Envoyer un fichier** | Portunia 0.82 et suivants : choisissez des fichiers, ou déposez des fichiers ou des dossiers sur l'écran (un dossier part en .zip). La personne accepte chaque fichier sur son écran ; il est rangé dans ses Téléchargements, dans le dossier « Portunia Assistance ». Le suivi (progression, Annuler) s'affiche dans la discussion. |
+
+**Fichiers.** Ce que la personne vous envoie (elle le choisit elle-même) arrive dans la discussion, avec **Ouvrir** et **Enregistrer…** (un programme s'enregistre seulement). L'image passe toujours avant les fichiers : la prise en main reste fluide pendant un envoi. Après une coupure du réseau, le transfert reprend où il en était, et chaque fichier est vérifié à l'arrivée (SHA-256) : un fichier abîmé est effacé. Offre gratuite : 100 Mo au plus par fichier ; Pro et Équipes : sans limite. La Gate note chaque fichier au journal (sens, taille, issue), sans en voir le nom ni le contenu.
 
 | Message | Que faire |
 | --- | --- |
@@ -584,7 +587,8 @@ Pendant l'assistance, un cadre entoure votre écran et une barre reste en haut (
 | **Pause** | Fige l'image chez la personne qui vous aide et bloque sa souris et son clavier, le temps de taper un mot de passe. Cliquez à nouveau pour reprendre. |
 | **Main** | Reprend la souris et le clavier : elle voit seulement. Si elle redemande le contrôle, la barre vous demande d'accepter ou de refuser. |
 | **Discussion** | Messages écrits. Une pastille rouge signale un nouveau message. |
-| **Arrêter** | Termine l'assistance. Un résumé s'affiche : durée, contrôle donné ou non, messages. |
+| **Fichiers** | Quand la personne qui vous aide propose un fichier, la fenêtre s'ouvre sous la barre : **Accepter** ou **Refuser** (refus automatique au bout d'une minute ; mise en garde pour un programme). Le fichier va dans Téléchargements › Portunia Assistance et n'est jamais ouvert tout seul. **Envoyer un fichier…** ouvre le sélecteur de Windows : seul ce que vous choisissez part. Les clics et les touches envoyés par la personne qui vous aide sont ignorés dans ces fenêtres : elle ne peut pas accepter à votre place. |
+| **Arrêter** | Termine l'assistance. Un résumé s'affiche : durée, contrôle donné ou non, fichiers échangés (avec « Ouvrir le dossier »). |
 
 > [!CAUTION]
 > **Méfiez-vous des appels inattendus** — Ne lisez ce code qu'à une personne que vous connaissez ou que vous avez vous-même appelée. Personne de sérieux ne vous appellera à l'improviste pour vous le demander. Si vous avez un doute, raccrochez.
