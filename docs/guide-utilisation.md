@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.91.0 · Portunia Gate 0.46.0 · Mise à jour : 11 novembre 2026*
+*Portunia 0.92.0 · Portunia Gate 0.47.0 · Mise à jour : 11 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -571,6 +571,16 @@ L'application ouvre le portail web de votre Gate, avec les mêmes écrans, le m�
 -   le bouton Retour revient à la page précédente ; depuis Mes serveurs, il propose de **quitter** ou de **changer d'adresse**.
 
 Pas encore dans l'application : télécharger un fichier reçu d'un Bureau à distance (utilisez un navigateur pour cela).
+
+<a id="empreinte"></a>
+
+### Se connecter avec l'empreinte (Gate 0.47, Portunia 0.92)
+
+1.  Connectez-vous une fois avec mot de passe et code dans l'application (Android 11 ou plus, empreinte enregistrée dans le téléphone).
+2.  L'application propose **Se connecter avec l'empreinte ?** : touchez **Activer**, puis posez le doigt.
+3.  Ensuite, à chaque ouverture : **Déverrouiller avec l'empreinte**, et vous arrivez sur Mes serveurs. **Se connecter avec mot de passe et code** reste possible.
+
+La clé créée pour cela reste dans la puce sécurisée du téléphone ; la Gate n'en garde que la partie publique et vous prévient par courriel à chaque enrôlement. Pour arrêter : bouton Retour depuis Mes serveurs › **Désactiver la connexion par empreinte**. L'enrôlement disparaît aussi si vous ajoutez une empreinte au téléphone, après 90 jours sans usage, ou si l'administrateur réinitialise votre mot de passe ou votre code : reconnectez-vous avec mot de passe et code, puis réactivez.
 
 <a id="sans-portunia"></a>
 

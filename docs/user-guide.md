@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.91.0 · Portunia Gate 0.46.0 · Updated: 11 November 2026*
+*Portunia 0.92.0 · Portunia Gate 0.47.0 · Updated: 11 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -571,6 +571,16 @@ The app opens the web portal of your Gate, with the same screens, account, code 
 -   the Back button returns to the previous page; from My servers, it offers to **quit** or to **change the address**.
 
 Not in the app yet: downloading a file received from a Remote Desktop (use a browser for that).
+
+<a id="fingerprint"></a>
+
+### Signing in with your fingerprint (Gate 0.47, Portunia 0.92)
+
+1.  Sign in once with password and code in the app (Android 11 or later, fingerprint registered in the phone).
+2.  The app offers **Sign in with your fingerprint?**: tap **Enable**, then touch the sensor.
+3.  Then, at each opening: **Unlock with fingerprint**, and you land on My servers. **Sign in with password and code** remains possible.
+
+The key created for this stays in the phone's secure chip; the Gate keeps only its public part and notifies you by e-mail at each enrolment. To stop: Back button from My servers › **Disable fingerprint sign-in**. The enrolment also disappears if you add a fingerprint to the phone, after 90 days without use, or if the administrator resets your password or code: sign in with password and code, then enable it again.
 
 <a id="sans-portunia"></a>
 
