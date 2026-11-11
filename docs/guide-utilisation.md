@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.83.0 · Portunia Gate 0.44.1 · Mise à jour : 7 novembre 2026*
+*Portunia 0.91.0 · Portunia Gate 0.46.0 · Mise à jour : 11 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -548,6 +548,29 @@ Si votre entreprise l'a activé, le portail ouvre vos serveurs depuis un navigat
 
 > [!WARNING]
 > **Poste partagé** — Cliquez sur « Se déconnecter » en partant et ne laissez aucun onglet ouvert.
+
+<a id="telephone"></a>
+
+### Sur un téléphone ou une tablette (Gate 0.46)
+
+| Où | Comment |
+| --- | --- |
+| Terminal | Une barre de touches s'affiche sous le terminal : Échap, Tab, flèches, Début, Fin, Pg↑, Pg↓, \| ~ / -, A− et A+ pour la taille du texte. **Ctrl** et **Alt** s'appliquent à la touche suivante : Ctrl puis c envoie Ctrl+C. |
+| Bureau à distance | Un appui = clic ; appui long ou appui à deux doigts = clic droit ; glisser = déplacer en tenant le bouton (fenêtre, sélection) ; deux doigts qui glissent = faire défiler. |
+| Taper dans Windows | **Clavier** ouvre le clavier du téléphone, avec une barre Échap, Tab, Ctrl, Alt, Win, flèches, Suppr, Début, Fin et Démarrer. Le texte arrive tel quel, quel que soit le clavier de Windows. Pour les raccourcis (Ctrl+C, Win+R…), réglez dans la barre la disposition du clavier Windows : **AZERTY** ou **QWERTY**. |
+
+<a id="android"></a>
+
+### L'application Android Portunia Gate (Portunia 0.91)
+
+L'application ouvre le portail web de votre Gate, avec les mêmes écrans, le même compte, le même code et les mêmes règles. Au premier lancement, tapez l'adresse du portail donnée par votre administrateur (par ex. `gate.acme.fr`) ; un lien `portunia-gate://gate.acme.fr` la remplit aussi. Ensuite :
+
+-   l'adresse est retenue, l'écran reste allumé pendant un terminal, un Bureau à distance ou une interface web ;
+-   le bouton **Plein écran** masque les barres du téléphone ;
+-   un lien vers un autre site s'ouvre dans votre navigateur ;
+-   le bouton Retour revient à la page précédente ; depuis Mes serveurs, il propose de **quitter** ou de **changer d'adresse**.
+
+Pas encore dans l'application : télécharger un fichier reçu d'un Bureau à distance (utilisez un navigateur pour cela).
 
 <a id="sans-portunia"></a>
 

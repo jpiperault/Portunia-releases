@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.83.0 · Portunia Gate 0.44.1 · Updated: 7 November 2026*
+*Portunia 0.91.0 · Portunia Gate 0.46.0 · Updated: 11 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -548,6 +548,29 @@ If your company has enabled it, the portal opens your servers from a browser, wi
 
 > [!WARNING]
 > **Shared computer** — Click "Sign out" when you leave and leave no tab open.
+
+<a id="phone"></a>
+
+### On a phone or a tablet (Gate 0.46)
+
+| Where | How |
+| --- | --- |
+| Terminal | A key bar appears below the terminal: Esc, Tab, arrows, Home, End, PgUp, PgDn, \| ~ / -, A− and A+ for the text size. **Ctrl** and **Alt** apply to the next key: Ctrl then c sends Ctrl+C. |
+| Remote Desktop | Tap = click; long press or two-finger tap = right click; drag = move with the button held (window, selection); two fingers sliding = scroll. |
+| Typing in Windows | **Keyboard** opens the phone's keyboard, with a bar Esc, Tab, Ctrl, Alt, Win, arrows, Del, Home, End and Start. Text arrives as typed, whatever the Windows keyboard. For shortcuts (Ctrl+C, Win+R…), set the layout of the Windows keyboard in the bar: **AZERTY** or **QWERTY**. |
+
+<a id="android"></a>
+
+### The Portunia Gate Android app (Portunia 0.91)
+
+The app opens the web portal of your Gate, with the same screens, account, code and rules. On first launch, type the portal address given by your administrator (e.g. `gate.acme.com`); a `portunia-gate://gate.acme.com` link fills it in too. Then:
+
+-   the address is remembered, the screen stays on during a terminal, a Remote Desktop or a web interface;
+-   the **Full screen** button hides the phone's bars;
+-   a link to another site opens in your browser;
+-   the Back button returns to the previous page; from My servers, it offers to **quit** or to **change the address**.
+
+Not in the app yet: downloading a file received from a Remote Desktop (use a browser for that).
 
 <a id="sans-portunia"></a>
 
