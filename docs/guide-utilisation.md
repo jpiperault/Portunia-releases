@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.93.0 · Portunia Gate 0.48.0 · Mise à jour : 14 novembre 2026*
+*Portunia 0.94.0 · Portunia Gate 0.52.0 · Mise à jour : 14 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -184,6 +184,7 @@ Les sessions SFTP, FTP et S3 s'ouvrent en **deux volets** : **Ce PC** à gauche,
 | Envoyer vers le serveur | Flèche → ou F5. Double-clic sur un fichier de ce PC fait de même. |
 | Récupérer sur ce PC | Flèche ← ou F6, dans le dossier ouvert à gauche. Double-clic sur un fichier du serveur fait de même. |
 | Fichier déjà présent | Règle « Si le fichier existe » de la file : demander, remplacer si plus récent, remplacer, ignorer. « Demander » pose une seule question pour toute la sélection. |
+| Transfert en échec (Portunia 0.94) | **Réessayer** le recommence depuis le début. **Reprendre** (édition Pro, SFTP) le continue d'où il s'était arrêté : un téléchargement interrompu garde la partie reçue à côté du fichier (`rapport.pdf.partiel`), qui prend son vrai nom une fois complet ; un envoi interrompu repart de la taille déjà présente sur le serveur. |
 | Suivre les transferts | Avancement et débit dans la file. « Pause » arrête de lancer les suivants ; la croix retire un transfert en attente. |
 | Fichiers cachés | Bouton « Fichiers masqués » : fichiers commençant par un point, et fichiers cachés de Windows. |
 
@@ -471,6 +472,7 @@ Vos serveurs apparaissent par dossiers sous le nom de la Gate. Vous ne voyez que
 -   Si l'administrateur l'autorise, cochez « Mémoriser mon mot de passe sur ce PC ». Le code sera toujours demandé.
 -   Le bouton « Plus d'actions » de la Gate propose aussi « Mes sessions » (si la Gate permet de relire les vôtres), « Se déconnecter » et « Retirer cette Gate ».
 -   **Serveur sur approbation** (Gate 0.38) : « Plus d'actions » › **Approbations**, donnez un motif (et un ticket si vous en avez un) puis **Demander**. Une notification vous prévient de la réponse ; le serveur apparaît alors dans la liste pour la durée accordée. Dix minutes avant la fin, un message s'affiche dans le terminal. Le portail web propose la même demande sous « Serveurs sur approbation ».
+-   **Vous êtes approbateur** (Gate 0.51, Portunia 0.94) : le portail web affiche « À décider » avec la durée et un commentaire ; dans l'application Android, une notification signale chaque nouvelle demande (autorisez les notifications quand l'application les demande).
 
 ### Sessions qui contournent la Gate
 
@@ -623,6 +625,7 @@ Le bandeau en haut de l'onglet (Portunia 0.81 et Portunia Assistance 0.81) montr
 | Dans le bandeau | Ce que cela veut dire |
 | --- | --- |
 | **Vue seule** · **Demander le contrôle** | Vous voyez l'écran sans agir. Le bouton envoie une demande ; la personne accepte ou refuse dans sa barre. |
+| **Écran** · **Infos du PC** (Portunia 0.94) | La personne a plusieurs écrans : choisissez celui que vous regardez dans la liste du bandeau ; son cadre de couleur suit. **Infos du PC** demande la version de Windows, le processeur, la mémoire, le disque, les écrans et l'adresse locale : la personne voit la liste dans sa discussion et accepte ou refuse ; la réponse arrive dans la vôtre. |
 | **Vous voyez et contrôlez l'écran** | Souris et clavier sont à vous. La personne peut reprendre la main à tout moment : vous repassez en vue seule. |
 | **Pause** | La personne tape un mot de passe ou lit un message privé : l'image est figée et rien de ce que vous faites n'est pris en compte. |
 | **Réseau coupé : reconnexion…** | Avec une Gate 0.43 ou suivante, la session reprend toute seule si le réseau revient dans les 2 minutes. |

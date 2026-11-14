@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.93.0 · Portunia Gate 0.48.0 · Updated: 14 November 2026*
+*Portunia 0.94.0 · Portunia Gate 0.52.0 · Updated: 14 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -184,6 +184,7 @@ SFTP, FTP and S3 sessions open in **two panes**: **This PC** on the left, the se
 | Upload to the server | Arrow → or F5. Double-clicking a file on this PC does the same. |
 | Download to this PC | Arrow ← or F6, into the folder open on the left. Double-clicking a file on the server does the same. |
 | File already there | The queue's "If the file exists" rule: ask, replace if newer, replace, skip. "Ask" asks a single question for the whole selection. |
+| Failed transfer (Portunia 0.94) | **Retry** starts it again from the beginning. **Resume** (Pro edition, SFTP) continues it from where it stopped: an interrupted download keeps the part received next to the file (`report.pdf.partiel`), which takes its real name once complete; an interrupted upload starts again from the size already on the server. |
 | Follow the transfers | Progress and speed in the queue. "Pause" stops starting the next ones; the cross removes a waiting transfer. |
 | Hidden files | "Hidden files" button: files starting with a dot, and Windows hidden files. |
 
@@ -471,6 +472,7 @@ Your servers appear in folders under the Gate's name. You only see the ones you 
 -   If the administrator allows it, tick "Remember my password on this PC". The code is still asked.
 -   The Gate's "More actions" button also offers "My sessions" (if the Gate lets you replay yours), "Sign out" and "Remove this Gate".
 -   **Server on approval** (Gate 0.38): "More actions" › **Approvals**, give a reason (and a ticket if you have one) then **Ask**. A notification tells you the answer; the server then shows in the list for the duration granted. Ten minutes before the end, a message shows in the terminal. The web portal offers the same request under "Servers on approval".
+-   **You are an approver** (Gate 0.51, Portunia 0.94): the web portal shows "To decide" with the duration and a comment; in the Android app, a notification tells you about each new request (allow notifications when the app asks).
 
 ### Sessions that bypass the Gate
 
@@ -623,6 +625,7 @@ The strip at the top of the tab (Portunia 0.81 and Portunia Assistance 0.81) sho
 | In the strip | What it means |
 | --- | --- |
 | **View only** · **Ask for control** | You see the screen without acting. The button sends a request; the person accepts or declines in their bar. |
+| **Screen** · **PC details** (Portunia 0.94) | The person has several screens: pick the one you watch in the banner's list; their coloured frame follows. **PC details** asks for the Windows version, processor, memory, disk, screens and local address: the person sees the list in their chat and accepts or declines; the answer arrives in yours. |
 | **You see and control the screen** | The mouse and keyboard are yours. The person can take back control at any time: you go back to view only. |
 | **Pause** | The person is typing a password or reading a private message: the image is frozen and nothing you do is taken into account. |
 | **Network cut: reconnecting…** | With a Gate 0.43 or later, the session resumes by itself if the network comes back within 2 minutes. |
