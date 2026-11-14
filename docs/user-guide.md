@@ -1,6 +1,6 @@
 # User guide
 
-*Portunia 0.92.0 · Portunia Gate 0.47.0 · Updated: 11 November 2026*
+*Portunia 0.93.0 · Portunia Gate 0.48.0 · Updated: 14 November 2026*
 
 > The Portunia Gate administration guide is in [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/administration-guide.md). Version française : [guide d'utilisation](guide-utilisation.md).
 
@@ -509,6 +509,16 @@ If the administrator published the Gate through Cloudflare (Gate 0.41, Portunia 
 ### Web interfaces
 
 Administration consoles (vCenter, iDRAC, firewalls…) carry a WEB badge (Gate 0.30, Portunia 0.67, Web interface extension). A click opens the application in a dedicated window, through the Gate; you type your credentials there as usual, unless the server is in **Vault** mode (Gate 0.32): the Gate then fills in the sign-in form (or the browser authentication) with the account it keeps, without showing you the password. The Gate logs the pages you open. In the web portal, it opens in a new tab; only one web interface at a time per browser.
+
+<a id="sortie-web"></a>
+
+### Browsing through the Gate (Portunia 0.93, Gate 0.48)
+
+-   A server with the **BROWSE** badge is a **web egress**: a click opens a **dedicated Edge, Chrome or Brave** (the first one found on the computer), whose whole traffic goes through the Gate. Sites see the Gate's address, not your computer's; video plays at full speed. A feature of the **Pro** edition.
+-   This browser has its own profile: your usual bookmarks, cookies and passwords are not there, and what you do in it never mixes with your usual browser. It is kept from one time to the next for the same Gate.
+-   While browsing, the server's line shows the open connections and the amount exchanged. Another click opens one more window; **Open an address…** (right click) opens a site directly; the cross or **Stop browsing** closes the browser.
+-   The administrator can limit the sites allowed. A refused site does not open (the browser shows a proxy error); addresses of the internal network are always refused: for an internal application, use its [web interface](#Gate).
+-   The Gate logs **the sites** you open (not the pages nor what you type: HTTPS stays encrypted). If the Gate cuts the session, or if you close Portunia, the dedicated browser closes: it never falls back to your direct connection.
 
 > [!WARNING]
 > **Phone lost or changed** — Without the phone, you can no longer generate a code. Ask your administrator to reset your code; you will do the QR code step again at your next sign-in.

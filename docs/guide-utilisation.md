@@ -1,6 +1,6 @@
 # Guide d'utilisation
 
-*Portunia 0.92.0 · Portunia Gate 0.47.0 · Mise à jour : 11 novembre 2026*
+*Portunia 0.93.0 · Portunia Gate 0.48.0 · Mise à jour : 14 novembre 2026*
 
 > Le guide d'administration de la Gate est dans [Portunia-Gate-releases](https://github.com/jpiperault/Portunia-Gate-releases/blob/main/docs/guide-administration.md). English version: [user guide](user-guide.md).
 
@@ -509,6 +509,16 @@ Si l'administrateur a publié la Gate par Cloudflare (Gate 0.41, Portunia 0.79),
 ### Interfaces web
 
 Les consoles d'administration (vCenter, iDRAC, pare-feu…) portent un badge WEB (Gate 0.30, Portunia 0.67, extension Interface web). Un clic ouvre l'application dans une fenêtre dédiée, par la Gate ; vous y tapez vos identifiants comme d'habitude, sauf si le serveur est en **coffre** (Gate 0.32) : la Gate remplit alors le formulaire de connexion (ou l'authentification du navigateur) avec le compte qu'elle garde, sans que vous voyiez le mot de passe. La Gate note les pages que vous ouvrez. Dans le portail web, elle s'ouvre dans un nouvel onglet ; une seule interface web à la fois par navigateur.
+
+<a id="sortie-web"></a>
+
+### Naviguer par la Gate (Portunia 0.93, Gate 0.48)
+
+-   Un serveur avec le badge **NAVIGUER** est une **sortie web** : un clic ouvre un **Edge, un Chrome ou un Brave dédié** (le premier trouvé sur le poste), dont tout le trafic passe par la Gate. Les sites voient l'adresse de la Gate, pas celle de votre poste ; la vidéo passe à pleine vitesse. Fonction de l'édition **Pro**.
+-   Ce navigateur a son propre profil : vos favoris, cookies et mots de passe habituels n'y sont pas, et ce que vous y faites ne se mêle pas à votre navigateur habituel. Il se retrouve d'une fois sur l'autre pour la même Gate.
+-   Pendant la navigation, la ligne du serveur montre les connexions ouvertes et le volume échangé. Un nouveau clic ouvre une fenêtre de plus ; **Ouvrir une adresse…** (clic droit) ouvre directement un site ; la croix ou **Arrêter la navigation** ferme le navigateur.
+-   L'administrateur peut limiter les sites permis. Un site refusé ne s'ouvre pas (le navigateur affiche une erreur de proxy) ; les adresses du réseau interne sont toujours refusées : pour une application interne, utilisez son [interface web](#Gate).
+-   La Gate note **les sites** que vous ouvrez (pas les pages ni ce que vous tapez : le HTTPS reste chiffré). Si la Gate coupe la session, ou si vous fermez Portunia, le navigateur dédié se ferme : il ne repart jamais par votre connexion directe.
 
 > [!WARNING]
 > **Téléphone perdu ou changé** — Sans le téléphone, vous ne pouvez plus générer de code. Demandez à votre administrateur de réinitialiser votre code ; vous referez l'étape du QR code à la prochaine connexion.
